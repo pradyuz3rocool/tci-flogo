@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Organizing your code on TIBCO Cloud Integration - Flogo SDK</title>
+    <link>https://tibcosoftware.github.io/tci-flogo/extensions/organizing-code/</link>
+    <description>Recent content in Organizing your code on TIBCO Cloud Integration - Flogo SDK</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 09 Apr 2016 16:50:16 +0200</lastBuildDate>
+    
+	<atom:link href="https://tibcosoftware.github.io/tci-flogo/extensions/organizing-code/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>connector.json</title>
+      <link>https://tibcosoftware.github.io/tci-flogo/extensions/organizing-code/connector-json/</link>
+      <pubDate>Sat, 09 Apr 2016 16:50:16 +0200</pubDate>
+      
+      <guid>https://tibcosoftware.github.io/tci-flogo/extensions/organizing-code/connector-json/</guid>
+      <description>The connector.json describes the model, the meta data, of the connector. It describes which fields are displayed and what kind of actions are supported in the connector UI. The below code explains which fields are in the JSON document as well as what kind of values are allowed. For more samples, check out the samples section!
+{ &amp;quot;name&amp;quot;: &amp;quot;wi-ext-ifttt&amp;quot;, &amp;quot;title&amp;quot;: &amp;quot;IFTTT WebHooks Connector&amp;quot;, &amp;quot;author&amp;quot;: &amp;quot;retgits&amp;quot;, &amp;quot;type&amp;quot;: &amp;quot;flogo:connector&amp;quot;, &amp;quot;version&amp;quot;: &amp;quot;0.1.0&amp;quot;, &amp;quot;display&amp;quot;: { &amp;quot;description&amp;quot;: &amp;quot;The IFTTT WebHooks Connector&amp;quot;, &amp;quot;category&amp;quot;: &amp;quot;IFTTT&amp;quot;, &amp;quot;visible&amp;quot;: true, &amp;quot;smallIcon&amp;quot;: &amp;quot;ifttt.</description>
+    </item>
+    
+    <item>
+      <title>connector.ts</title>
+      <link>https://tibcosoftware.github.io/tci-flogo/extensions/organizing-code/connector-ts/</link>
+      <pubDate>Sat, 09 Apr 2016 16:50:16 +0200</pubDate>
+      
+      <guid>https://tibcosoftware.github.io/tci-flogo/extensions/organizing-code/connector-ts/</guid>
+      <description>The connector.ts file handles the validation and actions for the fields described in the model. For example it validates that values have been entered in the text boxes or what to do when you click connect. The connector.module.ts makes sure that Flogo knows about your extension and injects the validation rules into it. This isn&amp;rsquo;t the full code, so if you want to see a sample check out the samples section!</description>
+    </item>
+    
+    <item>
+      <title>activity.json</title>
+      <link>https://tibcosoftware.github.io/tci-flogo/extensions/organizing-code/activity-json/</link>
+      <pubDate>Sat, 09 Apr 2016 16:50:16 +0200</pubDate>
+      
+      <guid>https://tibcosoftware.github.io/tci-flogo/extensions/organizing-code/activity-json/</guid>
+      <description>The activity.json describes the model, the metadata, of the activity. It describes, among other things, what the input and outputs are, who built it and which version you&amp;rsquo;re using. The below code explains which fields are in the JSON document as well as what kind of values are allowed. For more samples, check out the samples section!
+{ &amp;quot;name&amp;quot;: &amp;quot;webhook&amp;quot;, &amp;quot;title&amp;quot;: &amp;quot;Send IFTTT WebHook&amp;quot;, &amp;quot;version&amp;quot;: &amp;quot;0.1.0&amp;quot;, &amp;quot;type&amp;quot;: &amp;quot;flogo:activity&amp;quot;, &amp;quot;author&amp;quot;: &amp;quot;retgits&amp;quot;, &amp;quot;display&amp;quot;: { &amp;quot;category&amp;quot;: &amp;quot;IFTTT&amp;quot;, &amp;quot;visible&amp;quot;: true, &amp;quot;smallIcon&amp;quot;: &amp;quot;ifttt.</description>
+    </item>
+    
+    <item>
+      <title>activity.go</title>
+      <link>https://tibcosoftware.github.io/tci-flogo/extensions/organizing-code/activity-go/</link>
+      <pubDate>Sat, 09 Apr 2016 16:50:16 +0200</pubDate>
+      
+      <guid>https://tibcosoftware.github.io/tci-flogo/extensions/organizing-code/activity-go/</guid>
+      <description>Every extension must write the runtime code in Go (activity.go). You can, and really should, leverage the Go testing framework for writing unit test cases (activity_test.go) for your extension. The code here give you an overview of what files are structured like, but for samples you should really check out the samples section!
+activity.go // Package ifttt provides connectivity to IFTTT for TIBCO Cloud Integration - Flogo // using the WebHooks service from IFTTT (https://ifttt.</description>
+    </item>
+    
+    <item>
+      <title>activity.ts</title>
+      <link>https://tibcosoftware.github.io/tci-flogo/extensions/organizing-code/activity-ts/</link>
+      <pubDate>Sat, 09 Apr 2016 16:50:16 +0200</pubDate>
+      
+      <guid>https://tibcosoftware.github.io/tci-flogo/extensions/organizing-code/activity-ts/</guid>
+      <description>The activity.ts file handles the validation and actions for the fields described in the model. For example it validates that a valid connection has been chosen, or retrieves additional information based on values in certain fields. This part is optional and you can rely on the out of the box UI as well! The activity.module.ts makes sure that Flogo knows about your extension and injects the validation rules into it.</description>
+    </item>
+    
+    <item>
+      <title>trigger.json</title>
+      <link>https://tibcosoftware.github.io/tci-flogo/extensions/organizing-code/trigger-json/</link>
+      <pubDate>Sat, 09 Apr 2016 16:50:16 +0200</pubDate>
+      
+      <guid>https://tibcosoftware.github.io/tci-flogo/extensions/organizing-code/trigger-json/</guid>
+      <description>The trigger.json file describes the model, the metadata, of the trigger. It describes, among other things, what the input and outputs are, who built it and which version you&amp;rsquo;re using. Every trigger contribution must define its model in trigger.json file.This model is shared by both UI and runtime. The trigger model contains following parts:
+Trigger JSON sections  settings - Zero or more fields that contribute to the trigger configuration.</description>
+    </item>
+    
+    <item>
+      <title>trigger.ts</title>
+      <link>https://tibcosoftware.github.io/tci-flogo/extensions/organizing-code/trigger-ts/</link>
+      <pubDate>Sat, 09 Apr 2016 16:50:16 +0200</pubDate>
+      
+      <guid>https://tibcosoftware.github.io/tci-flogo/extensions/organizing-code/trigger-ts/</guid>
+      <description>The trigger.ts file handles the validation and actions for the fields described in the model. For example it validates that a valid connection has been chosen, or retrieves additional information based on values in certain fields. This part is optional and you can rely on the out of the box UI as well! The trigger.module.ts file makes sure that Flogo knows about your extension and injects the validation rules into it.</description>
+    </item>
+    
+    <item>
+      <title>trigger.go</title>
+      <link>https://tibcosoftware.github.io/tci-flogo/extensions/organizing-code/trigger-go/</link>
+      <pubDate>Sat, 09 Apr 2016 16:50:16 +0200</pubDate>
+      
+      <guid>https://tibcosoftware.github.io/tci-flogo/extensions/organizing-code/trigger-go/</guid>
+      <description>Every extension must write the runtime code in Go (trigger.go). You can, and really should, leverage the Go testing framework for writing unit test cases (trigger_test.go) for your extension. The code here give you an overview of what files are structured like, but for samples you should really check out the samples section!
+trigger.go
+package sample import ( &amp;quot;github.com/TIBCOSoftware/flogo-lib/core/action&amp;quot; &amp;quot;github.com/TIBCOSoftware/flogo-lib/core/trigger&amp;quot; &amp;quot;github.com/TIBCOSoftware/flogo-lib/logger&amp;quot; ) // Create a logger for the Sample Trigger // Logger Name : &amp;lt;category&amp;gt;-trigger-&amp;lt;type&amp;gt; var triggerLog = logger.</description>
+    </item>
+    
+    <item>
+      <title>Display settings</title>
+      <link>https://tibcosoftware.github.io/tci-flogo/extensions/organizing-code/display-settings/</link>
+      <pubDate>Sat, 09 Apr 2016 16:50:16 +0200</pubDate>
+      
+      <guid>https://tibcosoftware.github.io/tci-flogo/extensions/organizing-code/display-settings/</guid>
+      <description>The display element in the activity.json, connector.json and the trigger.json files can be used to enhance the user experience even more!
+Types Each display element has a type associated with it. The below table displays the types you can use and the Go type column shows how that translates into Go data types you can use in your activity.go file
+   Type Go type Description     string string A string   integer int64 A 64-bit integer   boolean bool A boolean   number float64 A 64-bit float   complex_object data.</description>
+    </item>
+    
+  </channel>
+</rss>

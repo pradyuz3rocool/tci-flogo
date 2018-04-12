@@ -1,0 +1,2003 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="generator" content="Hugo 0.39-DEV" />
+    <meta name="description" content="TIBCO Cloud Integration - Flogo SDK">
+<meta name="author" content="retgits">
+
+    <link rel="shortcut icon" href="https://www.tibco.com/sites/tibco/files/favicon_0.ico" type="image/vnd.microsoft.icon">
+    <title>fe-cli :: TIBCO Cloud Integration - Flogo SDK</title>
+    
+    
+    <link href="/tci-flogo/css/nucleus.css?1523556550" rel="stylesheet">
+    <link href="/tci-flogo/css/font-awesome.min.css?1523556550" rel="stylesheet">
+    <link href="/tci-flogo/css/hybrid.css?1523556550" rel="stylesheet">
+    <link href="/tci-flogo/css/featherlight.min.css?1523556550" rel="stylesheet">
+    <link href="/tci-flogo/css/perfect-scrollbar.min.css?1523556550" rel="stylesheet">
+    <link href="/tci-flogo/css/auto-complete.css?1523556550" rel="stylesheet">
+    <link href="/tci-flogo/css/theme.css?1523556550" rel="stylesheet">
+    <link href="/tci-flogo/css/hugo-theme.css?1523556550" rel="stylesheet">
+    
+      <link href="/tci-flogo/css/theme-blue.css?1523556550" rel="stylesheet">
+    
+
+    <script src="/tci-flogo/js/jquery-2.x.min.js?1523556550"></script>
+    
+    <style type="text/css">
+      :root #header + #content > #left > #rlblock_left{ 
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/tci-flogo/tooling/tooling/">
+    <nav id="sidebar" class="">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <svg id="icon-logo-tibco" viewBox="0 0 83 32" width="100%" height="100%">
+    <title>logo-tibco</title>
+    <path fill="#3e8ede" style="fill: var(--color11, #FFFFFF)" d="M9.361 6.199v16.837h-2.594v-16.837h-6.766v-2.471h16.126v2.471h-6.766z"></path>
+    <path fill="#3e8ede" style="fill: var(--color11, #FFFFFF)" d="M19.215 23.036v-19.308h2.595v19.308h-2.595z"></path>
+    <path fill="#3e8ede" style="fill: var(--color11, #FFFFFF)" d="M40.122 17.569c0 3.274-2.194 5.467-7.166 5.467h-6.581v-19.308h6.395c4.666 0 6.734 2.1 6.734 5.128 0 1.978-1.143 3.43-3.306 4.233 2.565 0.648 3.923 2.317 3.923 4.48zM32.986 6.138h-3.985v6.055c0.030 0 3.583 0 3.583 0 2.78 0 4.294-1.235 4.294-3.12 0-1.854-1.359-2.935-3.893-2.935zM32.801 14.571h-3.8v6.055h4.202c2.873 0 4.294-1.020 4.294-3.027 0.001-2.225-1.977-3.028-4.696-3.028z"></path>
+    <path fill="#3e8ede" style="fill: var(--color11, #FFFFFF)" d="M57.242 7.25c-1.699-1.112-3.274-1.637-5.282-1.637-4.202 0-7.014 2.904-7.014 7.693s2.842 7.847 7.075 7.847c2.070 0 4.109-0.834 5.467-1.884l0.433 2.626c-1.575 0.989-3.8 1.606-5.962 1.606-5.654 0-9.67-3.923-9.67-10.071s4.048-10.166 9.671-10.166c2.193 0 4.541 0.618 6.117 1.607l-0.835 2.378z"></path>
+    <path fill="#3e8ede" style="fill: var(--color11, #FFFFFF)" d="M73.985 4.626c-0.286-0.177-0.584-0.338-0.893-0.482-2.524 4.838-7.11 10.595-13.178 13.87 0.35 0.785 0.793 1.495 1.316 2.125 5.217-3.587 10.049-9.587 12.754-15.512z"></path>
+    <path fill="#3e8ede" style="fill: var(--color11, #FFFFFF)" d="M72.863 4.041c-1.248-0.543-2.661-0.834-4.194-0.834-5.676 0-9.686 4.381-9.686 10.149 0 0.973 0.103 1.89 0.298 2.746 5.806-2.367 10.966-7.584 13.582-12.061z"></path>
+    <path fill="#3e8ede" style="fill: var(--color11, #FFFFFF)" d="M74.203 4.762c-2.978 7.323-6.607 12.506-11.242 16.964 1.566 1.087 3.515 1.686 5.708 1.686 5.677 0 9.686-4.411 9.686-10.18 0-3.822-1.582-6.787-4.151-8.47z"></path>
+    <path fill="#3e8ede" style="fill: var(--color11, #FFFFFF)" d="M78.354 4.122v-0.015c0-1.361 1.103-2.507 2.494-2.507 1.404 0 2.494 1.132 2.494 2.494v0.014c0 1.362-1.103 2.508-2.494 2.508-1.404 0.001-2.494-1.132-2.494-2.493zM83.054 4.107v-0.014c0-1.218-0.946-2.222-2.207-2.222-1.247 0-2.207 1.018-2.207 2.235v0.015c0 1.218 0.946 2.221 2.207 2.221 1.247 0 2.207-1.017 2.207-2.236zM79.873 2.79h1.146c0.559 0 0.975 0.272 0.975 0.802 0 0.416-0.244 0.674-0.588 0.774l0.674 0.96h-0.587l-0.602-0.874h-0.531v0.874h-0.487v-2.536zM80.977 4.050c0.33 0 0.516-0.172 0.516-0.416 0-0.272-0.186-0.415-0.516-0.415h-0.617v0.831h0.617z"></path>
+</svg>
+    </div>
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/tci-flogo/introduction/" title="Introduction" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/tci-flogo/introduction/">
+          <i class="fa fa-home" aria-hidden="true"></i> Introduction
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/tci-flogo/getting-started/" title="Getting started" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/tci-flogo/getting-started/">
+          <i class="fa fa-bolt" aria-hidden="true"></i> Getting started
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/tci-flogo/getting-started/prerequisites/" title="Prerequisites" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/tci-flogo/getting-started/prerequisites/">
+          Prerequisites
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/tci-flogo/getting-started/prerequisites/flogo/" title="Use Project Flogo activities" class="dd-item ">
+        <a href="/tci-flogo/getting-started/prerequisites/flogo/">
+        Use Project Flogo activities
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/tci-flogo/getting-started/prerequisites/new-activities/" title="Create new activities" class="dd-item ">
+        <a href="/tci-flogo/getting-started/prerequisites/new-activities/">
+        Create new activities
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/tci-flogo/getting-started/dev-environment/" title="Set up your environment" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/tci-flogo/getting-started/dev-environment/">
+          Set up your environment
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/tci-flogo/getting-started/dev-environment/intellij-webstorm/" title="Using IntelliJ WebStorm" class="dd-item ">
+        <a href="/tci-flogo/getting-started/dev-environment/intellij-webstorm/">
+        Using IntelliJ WebStorm
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/tci-flogo/getting-started/dev-environment/vscode/" title="Using VS Code" class="dd-item ">
+        <a href="/tci-flogo/getting-started/dev-environment/vscode/">
+        Using VS Code
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/tci-flogo/tooling/" title="Tooling" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/tci-flogo/tooling/">
+          <i class="fa fa-angle-double-right" aria-hidden="true"></i> Tooling
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/tci-flogo/tooling/tooling/" title="fe-cli" class="dd-item active">
+        <a href="/tci-flogo/tooling/tooling/">
+        <i class="fa fa-terminal" aria-hidden="true"></i> fe-cli
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/tci-flogo/extensions/" title="Building extensions" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/tci-flogo/extensions/">
+          <i class="fa fa-wrench" aria-hidden="true"></i> Building extensions
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/tci-flogo/extensions/organizing-code/" title="Organizing your code" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/tci-flogo/extensions/organizing-code/">
+          Organizing your code
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/tci-flogo/extensions/organizing-code/connector-json/" title="connector.json" class="dd-item ">
+        <a href="/tci-flogo/extensions/organizing-code/connector-json/">
+        connector.json
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/tci-flogo/extensions/organizing-code/connector-ts/" title="connector.ts" class="dd-item ">
+        <a href="/tci-flogo/extensions/organizing-code/connector-ts/">
+        connector.ts
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/tci-flogo/extensions/organizing-code/activity-json/" title="activity.json" class="dd-item ">
+        <a href="/tci-flogo/extensions/organizing-code/activity-json/">
+        activity.json
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/tci-flogo/extensions/organizing-code/activity-go/" title="activity.go" class="dd-item ">
+        <a href="/tci-flogo/extensions/organizing-code/activity-go/">
+        activity.go
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/tci-flogo/extensions/organizing-code/activity-ts/" title="activity.ts" class="dd-item ">
+        <a href="/tci-flogo/extensions/organizing-code/activity-ts/">
+        activity.ts
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/tci-flogo/extensions/organizing-code/trigger-json/" title="trigger.json" class="dd-item ">
+        <a href="/tci-flogo/extensions/organizing-code/trigger-json/">
+        trigger.json
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/tci-flogo/extensions/organizing-code/trigger-ts/" title="trigger.ts" class="dd-item ">
+        <a href="/tci-flogo/extensions/organizing-code/trigger-ts/">
+        trigger.ts
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/tci-flogo/extensions/organizing-code/trigger-go/" title="trigger.go" class="dd-item ">
+        <a href="/tci-flogo/extensions/organizing-code/trigger-go/">
+        trigger.go
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/tci-flogo/extensions/organizing-code/display-settings/" title="Display settings" class="dd-item ">
+        <a href="/tci-flogo/extensions/organizing-code/display-settings/">
+        Display settings
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/tci-flogo/extensions/upload/" title="Upload to TCI" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/tci-flogo/extensions/upload/">
+          Upload to TCI
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/tci-flogo/sdk/" title="SDK" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/tci-flogo/sdk/">
+          <i class="fa fa-list-alt" aria-hidden="true"></i> SDK
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/tci-flogo/samples/" title="Samples" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/tci-flogo/samples/">
+          <i class="fa fa-cogs" aria-hidden="true"></i> Samples
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/tci-flogo/samples/concat/" title="Concat" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/tci-flogo/samples/concat/">
+          Concat
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/tci-flogo/samples/concat/simple-concat/" title="Simple concat" class="dd-item ">
+        <a href="/tci-flogo/samples/concat/simple-concat/">
+        Simple concat
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/tci-flogo/samples/concat/separator-concat/" title="Adding a separator token" class="dd-item ">
+        <a href="/tci-flogo/samples/concat/separator-concat/">
+        Adding a separator token
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/tci-flogo/samples/concat/ui-choices-concat/" title="Adding more UI options" class="dd-item ">
+        <a href="/tci-flogo/samples/concat/ui-choices-concat/">
+        Adding more UI options
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/tci-flogo/samples/amazon-sqs/" title="Amazon SQS" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/tci-flogo/samples/amazon-sqs/">
+          Amazon SQS
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/tci-flogo/samples/amazon-sqs/sqs-connector/" title="Connector" class="dd-item ">
+        <a href="/tci-flogo/samples/amazon-sqs/sqs-connector/">
+        Connector
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/tci-flogo/samples/amazon-sqs/sqs-send-message/" title="Sending a message" class="dd-item ">
+        <a href="/tci-flogo/samples/amazon-sqs/sqs-send-message/">
+        Sending a message
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/tci-flogo/samples/amazon-sqs/sqs-receive-message/" title="Receiving a message" class="dd-item ">
+        <a href="/tci-flogo/samples/amazon-sqs/sqs-receive-message/">
+        Receiving a message
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/tci-flogo/contribute/" title="Contribute" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/tci-flogo/contribute/">
+          <i class="fa fa-share-alt" aria-hidden="true"></i> Contribute
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+      <section id="shortcuts">
+        <h3></h3>
+        <ul>
+          
+              <li class="" role=""> 
+                  <a class="padding" href="https://github.com/TIBCOSoftware/tci-flogo"><i class='fa fa-github'></i> Github repo</a>
+              </li>
+          
+              <li class="" role=""> 
+                  <a class="padding" href="https://tibcosoftware.github.io/tci-awesome"><i class='fa fa-camera'></i> Showcases</a>
+              </li>
+          
+              <li class="" role=""> 
+                  <a class="padding" href="https://integration.cloud.tibco.com/docs/index.html"><i class='fa fa-book'></i> TCI docs</a>
+              </li>
+          
+              <li class="" role=""> 
+                  <a class="padding" href="https://tibcosoftware.github.io/tci-flogo/wi-studio/v1.3.0/"><i class='fa fa-book'></i> Designtime API docs v1.3.0</a>
+              </li>
+          
+              <li class="" role=""> 
+                  <a class="padding" href="https://tibcosoftware.github.io/tci-flogo/wi-runtime/v1.3.0/pkg/github.com/index.html"><i class='fa fa-book'></i> Runtime API docs v1.3.0</a>
+              </li>
+          
+        </ul>
+      </section>
+    
+
+    
+    <section id="footer">
+      <center>
+    
+    <a class="github-button" href="https://github.com/TIBCOSoftware/tci-webintegrator/archive/master.zip" data-icon="octicon-cloud-download" aria-label="Download TIBCOSoftware/tci-webintegrator on GitHub">Download</a>
+
+    
+    <a class="github-button" href="https://github.com/TIBCOSoftware/tci-webintegrator" data-icon="octicon-star" data-show-count="true" aria-label="Star TIBCOSoftware/tci-webintegrator on GitHub">Star</a>
+
+    
+    <a class="github-button" href="https://github.com/TIBCOSoftware/tci-webintegrator/fork" data-icon="octicon-repo-forked" data-show-count="true" aria-label="Fork TIBCOSoftware/tci-webintegrator on GitHub">Fork</a>
+
+</center>
+
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+    </section>
+  </div>
+</nav>
+
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable sticky-parent">
+              
+              <div class="sticky-spacer">
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fa fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fa fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/tci-flogo/'></a> > <a href='/tci-flogo/tooling/'>Tooling</a> > fe-cli
+          
+         
+          
+         
+          
+           
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#pre-requisites">Pre-requisites</a></li>
+<li><a href="#install">Install</a></li>
+<li><a href="#command-line-help-documentation">Command Line Help Documentation</a>
+<ul>
+<li><a href="#fe-cli-sh-help"><code>fe-cli.sh --help</code></a></li>
+<li><a href="#fe-cli-sh-init-help"><code>fe-cli.sh init --help</code></a></li>
+<li><a href="#fe-cli-sh-add-help"><code>fe-cli.sh add --help</code></a></li>
+<li><a href="#fe-cli-sh-add-activity-help"><code>fe-cli.sh add activity --help</code></a></li>
+<li><a href="#fe-cli-sh-add-connector-help"><code>fe-cli.sh add connector --help</code></a></li>
+<li><a href="#fe-cli-sh-add-trigger-help"><code>fe-cli.sh add trigger --help</code></a></li>
+<li><a href="#fe-cli-sh-add-handler-help"><code>fe-cli.sh add handler --help</code></a></li>
+<li><a href="#fe-cli-sh-compile"><code>fe-cli.sh compile</code></a></li>
+</ul></li>
+<li><a href="#example-usage">Example Usage</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+
+        
+        <div id="body-inner">
+          
+            <h1>fe-cli</h1>
+          
+
+        
+
+
+
+
+<p>In this section we&rsquo;ll walk through a command line tooling to help generate a scaffolding code for the extension User Interface.
+The commandline tool designed to help developers with the Flogo Enterprise SDK. The SDK is bundled inside a docker image which can be run without downloading the SDK&rsquo;s separately.</p>
+
+<h3 id="pre-requisites">Pre-requisites</h3>
+
+<ol>
+<li>Install Docker - <a href="https://www.docker.com/get-docker">download</a></li>
+</ol>
+
+<h3 id="install">Install</h3>
+
+<p>You can install flogo-enterprise-cli by downloading the flogo-enterprise-cli.tar.gz from the releases section</p>
+
+<ol>
+<li><p>Import the docker image from flogo-enterprise-cli.tar.gz to your docker machine installation or download the scripts from the <a href="https://github.com/TIBCOSoftware/tci-flogo/tree/master/tools"><code>tools</code></a> folder of this github repository.</p>
+
+<pre><code class="language-sh">gunzip -c flogo-enterprise-cli.tar.gz| docker load
+</code></pre></li>
+
+<li><p>Create a executable shell script in your shell $PATH  called <code>fe-cli.sh</code> with the following contents or download the script from the <a href="https://github.com/TIBCOSoftware/tci-flogo/tree/master/tools"><code>tools</code></a> folder of this github repository.</p>
+
+<pre><code class="language-sh">#!/bin/bash
+docker run --rm -ti -v $PWD:/src flogo-enterprise-cli:latest $@
+</code></pre></li>
+
+<li><p>Run the <code>fe-cli.sh</code> shell command from your plugin project work folder</p>
+
+<pre><code class="language-sh">&gt;cd &lt;your project folder&gt;
+&gt;fe-cli.sh --help
+</code></pre></li>
+
+<li><p>Run a test container as shown below from your plugin project work folder or download the  <code>test.sh</code> script from the <a href="https://github.com/TIBCOSoftware/tci-flogo/tree/master/tools"><code>tools</code></a> folder of this github repository.</p>
+
+<pre><code class="language-sh">&gt;cd &lt;your project folder&gt; 
+&gt;docker run --rm -ti -v $PWD:/src --entrypoint bash flogo-enterprise-cli:latest
+# cd /src
+# fe-test
+</code></pre></li>
+
+<li><p>Packaging Steps - The packaging file jszip.json is generated in your project folder. It can be done separately as shown below.</p>
+
+<pre><code class="language-sh">&gt;cd &lt;your project folder&gt;
+&gt;npm run zip
+</code></pre></li>
+
+<li><p>Node module Reinstall - In case you need to re-install <code>node_modules/packages</code> you can use the <code>test.sh</code> to create a docker container shell where you can run <code>yarn install</code>.</p></li>
+</ol>
+
+<h3 id="command-line-help-documentation">Command Line Help Documentation</h3>
+
+<h4 id="fe-cli-sh-help"><code>fe-cli.sh --help</code></h4>
+
+<p>The fe-cli has three basic commands as follows in order of their execution.</p>
+
+<ol>
+<li><code>init | initialize</code> -  This is the first step to initialize a wi-studio contribution project with the creation of the following files :-
+
+<ul>
+<li><code>package.json</code> - Node Package Manager configuration</li>
+<li><code>fe-cli.json</code> - wi-studio command line interface configuration</li>
+<li><code>tsconfig.json</code> - Typescript compiler configuration</li>
+<li><code>tslint.json</code> - Typescript language and coding standard configuration.</li>
+<li><code>karma-test-shim.js</code> - Karma testing framework file.</li>
+<li><code>karma.conf.js</code> - Karma test framework configuration.</li>
+<li><code>test-setup.sh</code> - Karma pre-test script.</li>
+<li><code>.babelrc</code> - Babelrc configuration for running gulp.</li>
+<li><code>gulpfile.babel.js</code> - Gulp build script.</li>
+<li><code>jszip.json</code> - jsZip configuration.</li>
+<li><code>jszip.prod.json</code> - jsZip configuration for production builds.</li>
+</ul></li>
+
+<li><p><code>add</code> -  This is the second step to add contribution service artifacts. The user can choose between <code>Handler</code> or a <code>Provider</code> contribution implementation styles and add their respective input parameters which are then stored in the fe-cli.json file. <code>Handler</code> contribution implementation style is the most easier style to use and is recommended. <code>Provider</code> contribution implementation style is recommended for advanced users who prefer better and smaller code management and readability. <strong>It is recommended to use only one style for the whole plugin instead of mixing and matching and can lead to unpredictable results</strong>.</p></li>
+
+<li><p>The third step is to add the triggers, activities,connector to the  <code>Handler</code> or <code>Provider</code></p></li>
+
+<li><p><code>compile</code> -  The compile step compiles the typescript <code>*.ts</code> files to <code>*.js</code> files using the typescript compiler. This is the fourth and the final step.</p></li>
+</ol>
+
+<pre><code class="language-sh">&gt;cd &lt;your project folder&gt;
+&gt;fe-cli.sh --help
+ 
+  Usage: fe-cli [options] [command]
+ 
+  Welcome to fe-cli command line
+ 
+ 
+  Options:
+ 
+    -V, --version  output the version number
+    -h, --help     output usage information
+ 
+ 
+  Commands:
+ 
+    initialize|init   Initialize fe-cli contribution project
+    add|add           Add service artifacts
+    compile|compile   Add service artifacts
+    help [cmd]        display help for [cmd]
+</code></pre>
+
+<h4 id="fe-cli-sh-init-help"><code>fe-cli.sh init --help</code></h4>
+
+<pre><code class="language-sh">&gt;cd &lt;your project folder&gt;
+&gt;fe-cli.sh init --help
+ 
+  Usage: fe-cli-initialize [options]
+ 
+ 
+  Options:
+ 
+    -c, --category [categoryName]  &lt;required&gt; Category Name
+    -s, --sdkpath [sdkpath]        &lt;optional&gt; fe-cli.tar.gz file path OR fe-cli sdk folder path
+    -h, --help                     output usage information
+  Examples:
+ 
+    $ fe-cli --help
+    $ fe-cli -h
+</code></pre>
+
+<h4 id="fe-cli-sh-add-help"><code>fe-cli.sh add --help</code></h4>
+
+<pre><code class="language-sh">&gt;cd &lt;your project folder&gt;
+&gt;fe-cli.sh add --help
+ 
+  Usage: fe-cli-add [options] [command]
+ 
+ 
+  Options:
+ 
+    -h, --help  output usage information
+ 
+ 
+  Commands:
+ 
+    activity    Add an Activity to your category
+    connector   Add a Connector to your category
+    trigger     Add a Trigger to your category
+    handler     Add a Module Handler Contribution Type
+    provider    Add a Module Provider Contribution Type
+    help [cmd]  display help for [cmd]
+</code></pre>
+
+<h4 id="fe-cli-sh-add-activity-help"><code>fe-cli.sh add activity --help</code></h4>
+
+<pre><code class="language-sh">&gt;cd &lt;your project folder&gt;
+&gt;fe-cli.sh add activity --help
+ 
+  Usage: fe-cli-add-activity [options]
+ 
+ 
+  Options:
+ 
+    -n, --name [activityName]  &lt;required&gt; Activity Name
+    -y, --yes                  &lt;optional&gt; Overwrite Yes/No
+    -h, --help                 output usage information
+  Examples:
+ 
+    $ fe-cli add activity -n ACTIVITY_NAME
+</code></pre>
+
+<h4 id="fe-cli-sh-add-connector-help"><code>fe-cli.sh add connector --help</code></h4>
+
+<pre><code class="language-sh">&gt;cd &lt;your project folder&gt;
+&gt;fe-cli.sh add connector --help
+ 
+  Usage: fe-cli-add-connector [options]
+ 
+ 
+  Options:
+ 
+    -n, --name [connectorName]  &lt;required&gt; Connector Name
+    -y, --yes                   &lt;optional&gt; Overwrite Yes/No
+    -h, --help                  output usage information
+  Examples:
+ 
+    $ fe-cli add connector -n CONNECTOR_NAME
+</code></pre>
+
+<h4 id="fe-cli-sh-add-trigger-help"><code>fe-cli.sh add trigger --help</code></h4>
+
+<pre><code class="language-sh">&gt;cd &lt;your project folder&gt;
+&gt;fe-cli.sh add trigger --help
+ 
+  Usage: fe-cli-add-trigger [options]
+ 
+ 
+  Options:
+ 
+    -n, --name [triggerName]  &lt;required&gt; Trigger Name
+    -y, --yes                 &lt;optional&gt; Overwrite Yes/No
+    -h, --help                output usage information
+  Examples:
+ 
+    $ fe-cli add trigger -n TRIGGER_NAME
+</code></pre>
+
+<h4 id="fe-cli-sh-add-handler-help"><code>fe-cli.sh add handler --help</code></h4>
+
+<pre><code class="language-sh">&gt;cd &lt;your project folder&gt;
+&gt;fe-cli.sh add handler --help
+ 
+  Usage: fe-cli-add-handler [options]
+ 
+ 
+  Options:
+ 
+    -n, --name [contributionName]  &lt;required&gt; Contribution Name
+    -y, --yes                      &lt;optional&gt; Overwrite Yes/No
+    -sa, --sample                  &lt;optional&gt; Generate sample tests
+    -h, --help                     output usage information
+  Examples:
+ 
+    $ fe-cli add handler -n CONTRIBUTION_NAME --sample
+</code></pre>
+
+<h4 id="fe-cli-sh-compile"><code>fe-cli.sh compile</code></h4>
+
+<pre><code>&gt;cd &lt;your project folder&gt;
+&gt;fe-cli.sh compile
+</code></pre>
+
+<h3 id="example-usage">Example Usage</h3>
+
+<pre><code class="language-sh">&gt;cd &lt;your project folder&gt; 
+&gt;fe-cli.sh init -c myCategory
+Using default SDK path:/usr/local/share/.config/yarn/global/node_modules/fe-cli/wi-studio
+  Setting up metadata [==========          ] 50% 0.0syarn install v1.3.2
+...
+
+&gt;fe-cli.sh add activity -n myActivity
+Using current directory for output
+  Adding Activity [====================] 100% 0.0s
+Generating the activity
+  Generating Code [====================] 100% 9.2s
+ 
+complete
+...
+
+&gt;fe-cli.sh add trigger -n myTrigger
+Using current directory for output
+  Adding Trigger [====================] 100% 0.0s
+Generating the trigger
+  Generating Code [====================] 100% 9.2s
+ 
+complete
+...
+
+&gt;fe-cli.sh add connector -n myConnector
+Using current directory for output
+  Adding Connector [====================] 100% 0.0s
+Generating the connector
+  Generating Code [====================] 100% 9.2s
+ 
+complete
+...
+
+&gt;fe-cli.sh add handler -n myActivity --sample
+Using current directory for output
+  Adding Handler [====================] 100% 0.0s
+Generating the handlers
+  Generating Code [====================] 100% 9.2s
+ 
+complete
+...
+
+&gt;fe-cli.sh add handler -n myTrigger --sample
+Using current directory for output
+  Adding Handler [====================] 100% 0.0s
+Generating the handlers
+  Generating Code [====================] 100% 9.2s
+ 
+complete
+...
+
+&gt;fe-cli.sh add handler -n myConnector --sample
+Using current directory for output
+  Adding Handler [====================] 100% 0.0s
+Generating the handlers
+  Generating Code [====================] 100% 9.2s
+ 
+complete
+...
+
+&gt;fe-cli.sh compile
+  Setting up metadata [===                 ] 13% 0.0syarn install v1.3.2
+ 
+[1/4] Resolving packages...
+ 
+success Already up-to-date.
+ 
+Done in 1.34s.
+ 
+Checking for yarn packages exited with code 0
+  Setting up metadata [=====               ] 25% 1.7syarn run v1.3.2
+ 
+$ tsc
+ 
+Done in 6.39s.
+ 
+Compilation exited with code 0 
+...
+
+&gt;test.sh
+bash-4.4# cd /src
+bash-4.4# wi-test
+yarn run v1.3.2
+$ ./test-setup.sh &amp;&amp; npm run build:test
+ 
+&gt; myCategory@1.0.0 build:test /src
+&gt; tsc -p src/
+ 
+$ karma start karma.conf.js --single-run --browsers Chrome_custom
+ 
+START:
+##teamcity[blockOpened name='JavaScript Unit Tests' flowId='']
+24 02 2018 01:27:48.444:WARN [watcher]: Pattern &quot;/src/node_modules/babel-plugin-proxy/build/runtime.js&quot; does not match any file.
+24 02 2018 01:28:03.593:WARN [watcher]: Pattern &quot;/src/node_modules/rxjs-extensions/**/*.js*&quot; does not match any file.
+24 02 2018 01:28:18.576:INFO [karma]: Karma v1.5.0 server started at http://0.0.0.0:9876/
+24 02 2018 01:28:18.577:INFO [launcher]: Launching browser Chrome_custom with unlimited concurrency
+24 02 2018 01:28:18.599:INFO [launcher]: Starting browser Chrome
+24 02 2018 01:28:20.180:INFO [Chrome 61.0.3163 (Linux 0.0.0)]: Connected on socket Fyl3g-t4fzF_wY1LAAAA with id 46138733
+  myActivityHandler tests
+    myActivityHandler
+      ✔ should return myActivityHandler
+    connectionRefFieldProvider
+      ✔ should return a field provider for :Connection Name
+##teamcity[testSuiteStarted name='myActivityHandler tests myActivityHandler.Chrome 61.0.3163 (Linux 0.0.0)' flowId='karmaTC84570619846138733']
+ ##teamcity[testStarted name='should return myActivityHandler' flowId='karmaTC84570619846138733']
+ ##teamcity[testFinished name='should return myActivityHandler' duration='74' flowId='karmaTC84570619846138733']
+ ##teamcity[testSuiteFinished name='myActivityHandler tests myActivityHandler.Chrome 61.0.3163 (Linux 0.0.0)' flowId='karmaTC84570619846138733']
+  myConnectorHandler tests
+    myConnectorHandler
+      ✔ should return myConnectorHandler
+##teamcity[testSuiteStarted name='myActivityHandler tests connectionRefFieldProvider.Chrome 61.0.3163 (Linux 0.0.0)' flowId='karmaTC84570619846138733']
+ ##teamcity[testStarted name='should return a field provider for :Connection Name' flowId='karmaTC84570619846138733']
+ ##teamcity[testFinished name='should return a field provider for :Connection Name' duration='25' flowId='karmaTC84570619846138733']
+ ##teamcity[testSuiteFinished name='myActivityHandler tests connectionRefFieldProvider.Chrome 61.0.3163 (Linux 0.0.0)' flowId='karmaTC84570619846138733']
+    connectionRefFieldProvider
+      ✔ should return a field provider for :Connection Name
+##teamcity[testSuiteStarted name='myConnectorHandler tests myConnectorHandler.Chrome 61.0.3163 (Linux 0.0.0)' flowId='karmaTC84570619846138733']
+ ##teamcity[testStarted name='should return myConnectorHandler' flowId='karmaTC84570619846138733']
+ ##teamcity[testFinished name='should return myConnectorHandler' duration='12' flowId='karmaTC84570619846138733']
+ ##teamcity[testSuiteFinished name='myConnectorHandler tests myConnectorHandler.Chrome 61.0.3163 (Linux 0.0.0)' flowId='karmaTC84570619846138733']
+  myTriggerHandler tests
+    myTriggerHandler
+      ✔ should return myTriggerHandler
+##teamcity[testSuiteStarted name='myConnectorHandler tests connectionRefFieldProvider.Chrome 61.0.3163 (Linux 0.0.0)' flowId='karmaTC84570619846138733']
+ ##teamcity[testStarted name='should return a field provider for :Connection Name' flowId='karmaTC84570619846138733']
+ ##teamcity[testFinished name='should return a field provider for :Connection Name' duration='13' flowId='karmaTC84570619846138733']
+ ##teamcity[testSuiteFinished name='myConnectorHandler tests connectionRefFieldProvider.Chrome 61.0.3163 (Linux 0.0.0)' flowId='karmaTC84570619846138733']
+    connectionRefFieldProvider
+      ✔ should return a field provider for :Connection Name
+##teamcity[testSuiteStarted name='myTriggerHandler tests myTriggerHandler.Chrome 61.0.3163 (Linux 0.0.0)' flowId='karmaTC84570619846138733']
+ ##teamcity[testStarted name='should return myTriggerHandler' flowId='karmaTC84570619846138733']
+ ##teamcity[testFinished name='should return myTriggerHandler' duration='11' flowId='karmaTC84570619846138733']
+ ##teamcity[testSuiteFinished name='myTriggerHandler tests myTriggerHandler.Chrome 61.0.3163 (Linux 0.0.0)' flowId='karmaTC84570619846138733']
+ 
+Finished in 0.197 secs / 0.155 secs @ 01:28:23 GMT+0000 (UTC)
+ 
+SUMMARY:
+✔ 6 tests completed
+##teamcity[testSuiteStarted name='myTriggerHandler tests connectionRefFieldProvider.Chrome 61.0.3163 (Linux 0.0.0)' flowId='karmaTC84570619846138733']
+ ##teamcity[testStarted name='should return a field provider for :Connection Name' flowId='karmaTC84570619846138733']
+ ##teamcity[testFinished name='should return a field provider for :Connection Name' duration='20' flowId='karmaTC84570619846138733']
+ ##teamcity[testSuiteFinished name='myTriggerHandler tests connectionRefFieldProvider.Chrome 61.0.3163 (Linux 0.0.0)' flowId='karmaTC84570619846138733']
+##teamcity[blockClosed name='JavaScript Unit Tests' flowId='']
+Done in 55.03s.
+...
+
+
+&gt;npm run zip
+ 
+&gt; testc@1.0.0 zip /Users/yourname/temp/test
+&gt; node ./node_modules/.bin/jszip --config ./jszip.json -o ../myContribution.zip
+ 
+  compressing [====================] 100% 0.0s
+  done
+ &gt; unzip -v myContribution.zip
+Archive:  myContribution.zip
+ Length   Method    Size  Cmpr    Date    Time   CRC-32   Name
+--------  ------  ------- ---- ---------- ----- --------  ----
+       0  Stored        0   0% 02-22-2018 18:04 00000000  testc/
+       0  Stored        0   0% 02-22-2018 18:04 00000000  testc/myActivity/
+      42  Defl:N       42   0% 02-22-2018 18:04 30dcb4e1  testc/myActivity/myActivity.module.d.ts
+    1437  Defl:N      589  59% 02-22-2018 18:04 25b06160  testc/myActivity/myActivity.module.js
+     510  Defl:N      281  45% 02-22-2018 18:04 e6eb38ef  testc/myActivity/myActivity.module.js.map
+     535  Defl:N      250  53% 02-22-2018 18:04 dbb62736  testc/myActivity/myActivity.module.ts
+     681  Defl:N      286  58% 02-22-2018 18:04 422a5589  testc/myActivity/myActivityHandler.d.ts
+    2820  Defl:N      946  67% 02-22-2018 18:04 afa5a365  testc/myActivity/myActivityHandler.js
+    1050  Defl:N      412  61% 02-22-2018 18:04 7206bb3c  testc/myActivity/myActivityHandler.js.map
+    1358  Defl:N      420  69% 02-22-2018 18:04 857aa42c  testc/myActivity/myActivityHandler.ts
+       0  Stored        0   0% 02-22-2018 18:04 00000000  testc/myConnector/
+      43  Defl:N       43   0% 02-22-2018 18:04 90346bee  testc/myConnector/myConnector.module.d.ts
+    1449  Defl:N      589  59% 02-22-2018 18:04 a6293ec1  testc/myConnector/myConnector.module.js
+     512  Defl:N      281  45% 02-22-2018 18:04 95a31393  testc/myConnector/myConnector.module.js.map
+     539  Defl:N      249  54% 02-22-2018 18:04 b210cbd6  testc/myConnector/myConnector.module.ts
+    2829  Defl:N      946  67% 02-22-2018 18:04 847fca77  testc/myConnector/myConnectorHandler.js
+     682  Defl:N      286  58% 02-22-2018 18:04 24c7852a  testc/myConnector/myConnectorHandler.d.ts
+    1052  Defl:N      408  61% 02-22-2018 18:04 b85bfb4a  testc/myConnector/myConnectorHandler.js.map
+    1359  Defl:N      420  69% 02-22-2018 18:04 b13cc8fb  testc/myConnector/myConnectorHandler.ts
+       0  Stored        0   0% 02-22-2018 18:04 00000000  testc/myTrigger/
+      41  Defl:N       41   0% 02-22-2018 18:04 f38e282c  testc/myTrigger/myTrigger.module.d.ts
+    1425  Defl:N      587  59% 02-22-2018 18:04 6f44bc1a  testc/myTrigger/myTrigger.module.js
+     501  Defl:N      277  45% 02-22-2018 18:04 a48ec3a0  testc/myTrigger/myTrigger.module.js.map
+     531  Defl:N      249  53% 02-22-2018 18:04 43703013  testc/myTrigger/myTrigger.module.ts
+     747  Defl:N      302  60% 02-22-2018 18:04 e926cfb5  testc/myTrigger/myTriggerHandler.d.ts
+    2889  Defl:N      960  67% 02-22-2018 18:04 1487c14e  testc/myTrigger/myTriggerHandler.js
+    1085  Defl:N      429  61% 02-22-2018 18:04 f23d135b  testc/myTrigger/myTriggerHandler.js.map
+    1422  Defl:N      430  70% 02-22-2018 18:04 1309b764  testc/myTrigger/myTriggerHandler.ts
+--------          -------  ---                            -------
+   25539             9723  62%                            28 files
+  
+</code></pre>
+
+
+<footer class=" footline" >
+	
+</footer>
+
+
+        
+        </div> 
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+        
+            <a class="nav nav-prev" href="/tci-flogo/tooling/" title="Tooling"> <i class="fa fa-chevron-left"></i></a>
+        
+        
+            <a class="nav nav-next" href="/tci-flogo/extensions/" title="Building extensions" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+        
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/tci-flogo/js/clipboard.min.js?1523556550"></script>
+    <script src="/tci-flogo/js/perfect-scrollbar.min.js?1523556550"></script>
+    <script src="/tci-flogo/js/perfect-scrollbar.jquery.min.js?1523556550"></script>
+    <script src="/tci-flogo/js/jquery.sticky-kit.min.js?1523556550"></script>
+    <script src="/tci-flogo/js/featherlight.min.js?1523556550"></script>
+    <script src="/tci-flogo/js/html5shiv-printshiv.min.js?1523556550"></script>
+    <script src="/tci-flogo/js/highlight.pack.js?1523556550"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/tci-flogo/js/modernizr.custom.71422.js?1523556550"></script>
+    <script src="/tci-flogo/js/learn.js?1523556550"></script>
+    <script src="/tci-flogo/js/hugo-learn.js?1523556550"></script>
+
+    <link href="/tci-flogo/mermaid/mermaid.css?1523556550" type="text/css" rel="stylesheet" />
+    <script src="/tci-flogo/mermaid/mermaid.js?1523556550"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    
+
+  </body>
+</html>
+

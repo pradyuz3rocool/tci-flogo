@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tooling on TIBCO Cloud Integration - Flogo SDK</title>
+    <link>https://tibcosoftware.github.io/tci-flogo/tooling/</link>
+    <description>Recent content in Tooling on TIBCO Cloud Integration - Flogo SDK</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 05 Apr 2018 11:10:16 +0800</lastBuildDate>
+    
+	<atom:link href="https://tibcosoftware.github.io/tci-flogo/tooling/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>fe-cli</title>
+      <link>https://tibcosoftware.github.io/tci-flogo/tooling/tooling/</link>
+      <pubDate>Thu, 05 Apr 2018 11:10:16 +0800</pubDate>
+      
+      <guid>https://tibcosoftware.github.io/tci-flogo/tooling/tooling/</guid>
+      <description>In this section we&amp;rsquo;ll walk through a command line tooling to help generate a scaffolding code for the extension User Interface. The commandline tool designed to help developers with the Flogo Enterprise SDK. The SDK is bundled inside a docker image which can be run without downloading the SDK&amp;rsquo;s separately.
+Pre-requisites  Install Docker - download  Install You can install flogo-enterprise-cli by downloading the flogo-enterprise-cli.tar.gz from the releases section</description>
+    </item>
+    
+  </channel>
+</rss>

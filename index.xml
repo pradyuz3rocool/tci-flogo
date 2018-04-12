@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>TIBCO Cloud Integration - Flogo SDK</title>
+    <link>https://tibcosoftware.github.io/tci-flogo/</link>
+    <description>Recent content on TIBCO Cloud Integration - Flogo SDK</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 09 Apr 2016 16:50:16 +0200</lastBuildDate>
+    
+	<atom:link href="https://tibcosoftware.github.io/tci-flogo/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Use Project Flogo activities</title>
+      <link>https://tibcosoftware.github.io/tci-flogo/getting-started/prerequisites/flogo/</link>
+      <pubDate>Sat, 09 Apr 2016 16:50:16 +0200</pubDate>
+      
+      <guid>https://tibcosoftware.github.io/tci-flogo/getting-started/prerequisites/flogo/</guid>
+      <description>Leveraging the already existing activities built by the Project Flogo community is really easy! Simply zip them up and upload them to TIBCO Cloud&amp;trade; Integration. Let&amp;rsquo;s say that you want to use the Counter activity from the flogo-contrib repository on GitHub. We&amp;rsquo;ll walk you through the steps to use that activity
+First you&amp;rsquo;ll need to download or clone the repository
+git clone https://github.com/TIBCOSoftware/flogo-contrib  Now, create a zip file of the counter activity in the activity folder</description>
+    </item>
+    
+    <item>
+      <title>Create new activities</title>
+      <link>https://tibcosoftware.github.io/tci-flogo/getting-started/prerequisites/new-activities/</link>
+      <pubDate>Sat, 09 Apr 2016 16:50:16 +0200</pubDate>
+      
+      <guid>https://tibcosoftware.github.io/tci-flogo/getting-started/prerequisites/new-activities/</guid>
+      <description>Creating new activities for the Flogo in TIBCO Cloud&amp;trade; Integration isn&amp;rsquo;t hard. Depending on your requirements a new activity requires a bit of Go and possibly a bit of TypeScript. The TIBCO Cloud&amp;trade; Integration - Flogo&amp;reg; is powered by Project Flogo, so when you&amp;rsquo;re developing extensions for TIBCO Cloud&amp;trade; Integration - Flogo&amp;reg; the runtime parts are the same as you would create them for Flogo. That also means that extensions for Flogo will work in TIBCO Cloud&amp;trade; Integration - Flogo&amp;reg; and vice versa!</description>
+    </item>
+    
+    <item>
+      <title>Using IntelliJ WebStorm</title>
+      <link>https://tibcosoftware.github.io/tci-flogo/getting-started/dev-environment/intellij-webstorm/</link>
+      <pubDate>Sat, 09 Apr 2016 16:50:16 +0200</pubDate>
+      
+      <guid>https://tibcosoftware.github.io/tci-flogo/getting-started/dev-environment/intellij-webstorm/</guid>
+      <description>To use IntelliJ WebStorm as your IDE to develop extensions for TIBCO Cloud&amp;trade; Integration - Flogo&amp;reg;, you can install a few extensions to make your life easier.
+ First you need to install the Go Plugin. This plugin can be downloaded from the Preferences dialog   Next you need to set up Go Plugin from the Preferences dialog to make sure it knows about the environment variables for GOAPTH and GOROOT  </description>
+    </item>
+    
+    <item>
+      <title>Using VS Code</title>
+      <link>https://tibcosoftware.github.io/tci-flogo/getting-started/dev-environment/vscode/</link>
+      <pubDate>Sat, 09 Apr 2016 16:50:16 +0200</pubDate>
+      
+      <guid>https://tibcosoftware.github.io/tci-flogo/getting-started/dev-environment/vscode/</guid>
+      <description>To use Microsoft Visual Studio Code as your IDE to develop extensions for TIBCO Cloud&amp;trade; Integration - Flogo&amp;reg; you can install a few extensions to make your life easier.
+ Install the Go extension from the extensions marketplace in Visual Studio Code.   Visual Studio Code uses the variables set on your machine and will ask you to install an additional set of analysis tools. These tools make developing Go projects in VSCode a lot easier.</description>
+    </item>
+    
+    <item>
+      <title>connector.json</title>
+      <link>https://tibcosoftware.github.io/tci-flogo/extensions/organizing-code/connector-json/</link>
+      <pubDate>Sat, 09 Apr 2016 16:50:16 +0200</pubDate>
+      
+      <guid>https://tibcosoftware.github.io/tci-flogo/extensions/organizing-code/connector-json/</guid>
+      <description>The connector.json describes the model, the meta data, of the connector. It describes which fields are displayed and what kind of actions are supported in the connector UI. The below code explains which fields are in the JSON document as well as what kind of values are allowed. For more samples, check out the samples section!
+{ &amp;quot;name&amp;quot;: &amp;quot;wi-ext-ifttt&amp;quot;, &amp;quot;title&amp;quot;: &amp;quot;IFTTT WebHooks Connector&amp;quot;, &amp;quot;author&amp;quot;: &amp;quot;retgits&amp;quot;, &amp;quot;type&amp;quot;: &amp;quot;flogo:connector&amp;quot;, &amp;quot;version&amp;quot;: &amp;quot;0.1.0&amp;quot;, &amp;quot;display&amp;quot;: { &amp;quot;description&amp;quot;: &amp;quot;The IFTTT WebHooks Connector&amp;quot;, &amp;quot;category&amp;quot;: &amp;quot;IFTTT&amp;quot;, &amp;quot;visible&amp;quot;: true, &amp;quot;smallIcon&amp;quot;: &amp;quot;ifttt.</description>
+    </item>
+    
+    <item>
+      <title>connector.ts</title>
+      <link>https://tibcosoftware.github.io/tci-flogo/extensions/organizing-code/connector-ts/</link>
+      <pubDate>Sat, 09 Apr 2016 16:50:16 +0200</pubDate>
+      
+      <guid>https://tibcosoftware.github.io/tci-flogo/extensions/organizing-code/connector-ts/</guid>
+      <description>The connector.ts file handles the validation and actions for the fields described in the model. For example it validates that values have been entered in the text boxes or what to do when you click connect. The connector.module.ts makes sure that Flogo knows about your extension and injects the validation rules into it. This isn&amp;rsquo;t the full code, so if you want to see a sample check out the samples section!</description>
+    </item>
+    
+    <item>
+      <title>activity.json</title>
+      <link>https://tibcosoftware.github.io/tci-flogo/extensions/organizing-code/activity-json/</link>
+      <pubDate>Sat, 09 Apr 2016 16:50:16 +0200</pubDate>
+      
+      <guid>https://tibcosoftware.github.io/tci-flogo/extensions/organizing-code/activity-json/</guid>
+      <description>The activity.json describes the model, the metadata, of the activity. It describes, among other things, what the input and outputs are, who built it and which version you&amp;rsquo;re using. The below code explains which fields are in the JSON document as well as what kind of values are allowed. For more samples, check out the samples section!
+{ &amp;quot;name&amp;quot;: &amp;quot;webhook&amp;quot;, &amp;quot;title&amp;quot;: &amp;quot;Send IFTTT WebHook&amp;quot;, &amp;quot;version&amp;quot;: &amp;quot;0.1.0&amp;quot;, &amp;quot;type&amp;quot;: &amp;quot;flogo:activity&amp;quot;, &amp;quot;author&amp;quot;: &amp;quot;retgits&amp;quot;, &amp;quot;display&amp;quot;: { &amp;quot;category&amp;quot;: &amp;quot;IFTTT&amp;quot;, &amp;quot;visible&amp;quot;: true, &amp;quot;smallIcon&amp;quot;: &amp;quot;ifttt.</description>
+    </item>
+    
+    <item>
+      <title>activity.go</title>
+      <link>https://tibcosoftware.github.io/tci-flogo/extensions/organizing-code/activity-go/</link>
+      <pubDate>Sat, 09 Apr 2016 16:50:16 +0200</pubDate>
+      
+      <guid>https://tibcosoftware.github.io/tci-flogo/extensions/organizing-code/activity-go/</guid>
+      <description>Every extension must write the runtime code in Go (activity.go). You can, and really should, leverage the Go testing framework for writing unit test cases (activity_test.go) for your extension. The code here give you an overview of what files are structured like, but for samples you should really check out the samples section!
+activity.go // Package ifttt provides connectivity to IFTTT for TIBCO Cloud Integration - Flogo // using the WebHooks service from IFTTT (https://ifttt.</description>
+    </item>
+    
+    <item>
+      <title>activity.ts</title>
+      <link>https://tibcosoftware.github.io/tci-flogo/extensions/organizing-code/activity-ts/</link>
+      <pubDate>Sat, 09 Apr 2016 16:50:16 +0200</pubDate>
+      
+      <guid>https://tibcosoftware.github.io/tci-flogo/extensions/organizing-code/activity-ts/</guid>
+      <description>The activity.ts file handles the validation and actions for the fields described in the model. For example it validates that a valid connection has been chosen, or retrieves additional information based on values in certain fields. This part is optional and you can rely on the out of the box UI as well! The activity.module.ts makes sure that Flogo knows about your extension and injects the validation rules into it.</description>
+    </item>
+    
+    <item>
+      <title>trigger.json</title>
+      <link>https://tibcosoftware.github.io/tci-flogo/extensions/organizing-code/trigger-json/</link>
+      <pubDate>Sat, 09 Apr 2016 16:50:16 +0200</pubDate>
+      
+      <guid>https://tibcosoftware.github.io/tci-flogo/extensions/organizing-code/trigger-json/</guid>
+      <description>The trigger.json file describes the model, the metadata, of the trigger. It describes, among other things, what the input and outputs are, who built it and which version you&amp;rsquo;re using. Every trigger contribution must define its model in trigger.json file.This model is shared by both UI and runtime. The trigger model contains following parts:
+Trigger JSON sections  settings - Zero or more fields that contribute to the trigger configuration.</description>
+    </item>
+    
+    <item>
+      <title>trigger.ts</title>
+      <link>https://tibcosoftware.github.io/tci-flogo/extensions/organizing-code/trigger-ts/</link>
+      <pubDate>Sat, 09 Apr 2016 16:50:16 +0200</pubDate>
+      
+      <guid>https://tibcosoftware.github.io/tci-flogo/extensions/organizing-code/trigger-ts/</guid>
+      <description>The trigger.ts file handles the validation and actions for the fields described in the model. For example it validates that a valid connection has been chosen, or retrieves additional information based on values in certain fields. This part is optional and you can rely on the out of the box UI as well! The trigger.module.ts file makes sure that Flogo knows about your extension and injects the validation rules into it.</description>
+    </item>
+    
+    <item>
+      <title>trigger.go</title>
+      <link>https://tibcosoftware.github.io/tci-flogo/extensions/organizing-code/trigger-go/</link>
+      <pubDate>Sat, 09 Apr 2016 16:50:16 +0200</pubDate>
+      
+      <guid>https://tibcosoftware.github.io/tci-flogo/extensions/organizing-code/trigger-go/</guid>
+      <description>Every extension must write the runtime code in Go (trigger.go). You can, and really should, leverage the Go testing framework for writing unit test cases (trigger_test.go) for your extension. The code here give you an overview of what files are structured like, but for samples you should really check out the samples section!
+trigger.go
+package sample import ( &amp;quot;github.com/TIBCOSoftware/flogo-lib/core/action&amp;quot; &amp;quot;github.com/TIBCOSoftware/flogo-lib/core/trigger&amp;quot; &amp;quot;github.com/TIBCOSoftware/flogo-lib/logger&amp;quot; ) // Create a logger for the Sample Trigger // Logger Name : &amp;lt;category&amp;gt;-trigger-&amp;lt;type&amp;gt; var triggerLog = logger.</description>
+    </item>
+    
+    <item>
+      <title>fe-cli</title>
+      <link>https://tibcosoftware.github.io/tci-flogo/tooling/tooling/</link>
+      <pubDate>Thu, 05 Apr 2018 11:10:16 +0800</pubDate>
+      
+      <guid>https://tibcosoftware.github.io/tci-flogo/tooling/tooling/</guid>
+      <description>In this section we&amp;rsquo;ll walk through a command line tooling to help generate a scaffolding code for the extension User Interface. The commandline tool designed to help developers with the Flogo Enterprise SDK. The SDK is bundled inside a docker image which can be run without downloading the SDK&amp;rsquo;s separately.
+Pre-requisites  Install Docker - download  Install You can install flogo-enterprise-cli by downloading the flogo-enterprise-cli.tar.gz from the releases section</description>
+    </item>
+    
+    <item>
+      <title>Display settings</title>
+      <link>https://tibcosoftware.github.io/tci-flogo/extensions/organizing-code/display-settings/</link>
+      <pubDate>Sat, 09 Apr 2016 16:50:16 +0200</pubDate>
+      
+      <guid>https://tibcosoftware.github.io/tci-flogo/extensions/organizing-code/display-settings/</guid>
+      <description>The display element in the activity.json, connector.json and the trigger.json files can be used to enhance the user experience even more!
+Types Each display element has a type associated with it. The below table displays the types you can use and the Go type column shows how that translates into Go data types you can use in your activity.go file
+   Type Go type Description     string string A string   integer int64 A 64-bit integer   boolean bool A boolean   number float64 A 64-bit float   complex_object data.</description>
+    </item>
+    
+    <item>
+      <title>Simple concat</title>
+      <link>https://tibcosoftware.github.io/tci-flogo/samples/concat/simple-concat/</link>
+      <pubDate>Sat, 09 Apr 2016 16:50:16 +0200</pubDate>
+      
+      <guid>https://tibcosoftware.github.io/tci-flogo/samples/concat/simple-concat/</guid>
+      <description>Let&amp;rsquo;s create a simple concat activity. The activity takes two input strings and returns a single string which will be the concatenation of the input. To structure our extensions we&amp;rsquo;ll put them in the TIBCO category, but you&amp;rsquo;re free to choose your own 😄
+The folder The first step is to create a folder named concat in the TIBCO category with following files:
+TIBCO └───activity └───concat ├───activity.json |───activity.go |───activity_test.go └───concat.</description>
+    </item>
+    
+    <item>
+      <title>Adding a separator token</title>
+      <link>https://tibcosoftware.github.io/tci-flogo/samples/concat/separator-concat/</link>
+      <pubDate>Sat, 09 Apr 2016 16:50:16 +0200</pubDate>
+      
+      <guid>https://tibcosoftware.github.io/tci-flogo/samples/concat/separator-concat/</guid>
+      <description>Let&amp;rsquo;s enhance the concat activity to let users select a separator for concatenation.
+activity.json The activity.json file needs a few small changes and now has a third input for the separator, that also shows which separators are allowed.
+{ &amp;quot;name&amp;quot;: &amp;quot;concat&amp;quot;, &amp;quot;title&amp;quot;: &amp;quot;Concat Activity&amp;quot;, &amp;quot;author&amp;quot;: &amp;quot;TIBCO Software Inc.&amp;quot;, &amp;quot;version&amp;quot;: &amp;quot;1.0.0&amp;quot;, &amp;quot;type&amp;quot;: &amp;quot;flogo:activity&amp;quot;, &amp;quot;display&amp;quot;: { &amp;quot;category&amp;quot;: &amp;quot;TIBCO&amp;quot;, &amp;quot;visible&amp;quot;: true, &amp;quot;smallIcon&amp;quot;: &amp;quot;concat-small-icon.png&amp;quot;, &amp;quot;description&amp;quot;: &amp;quot;This activity returns concatenation of two strings&amp;quot; }, &amp;quot;ref&amp;quot;: &amp;quot;github.</description>
+    </item>
+    
+    <item>
+      <title>Adding more UI options</title>
+      <link>https://tibcosoftware.github.io/tci-flogo/samples/concat/ui-choices-concat/</link>
+      <pubDate>Sat, 09 Apr 2016 16:50:16 +0200</pubDate>
+      
+      <guid>https://tibcosoftware.github.io/tci-flogo/samples/concat/ui-choices-concat/</guid>
+      <description>Now the user can choose the separator token, but what to do if you want to let users decide whether they want to use a separator or not and what to do if you don&amp;rsquo;t want to hardcode the separator list in the JSON file? All of this can be solved with simple TypeScript (ts) code!
+The folder We need two TypeScript files for our Concat activity. In those files we&amp;rsquo;ll make the separator field visible only when users wants to use it and we&amp;rsquo;ll also construct and return separator list.</description>
+    </item>
+    
+    <item>
+      <title>Connector</title>
+      <link>https://tibcosoftware.github.io/tci-flogo/samples/amazon-sqs/sqs-connector/</link>
+      <pubDate>Sat, 09 Apr 2016 16:50:16 +0200</pubDate>
+      
+      <guid>https://tibcosoftware.github.io/tci-flogo/samples/amazon-sqs/sqs-connector/</guid>
+      <description>The connector will use a bunch of files connector.json for the model and connector.module.ts and connector.ts for the UI
+connector.json { &amp;quot;name&amp;quot;: &amp;quot;tibco-sqs&amp;quot;, &amp;quot;title&amp;quot;: &amp;quot;TIBCO SQS Connector&amp;quot;, &amp;quot;author&amp;quot;: &amp;quot;TIBCO Software Inc.&amp;quot;, &amp;quot;type&amp;quot;: &amp;quot;flogo:connector&amp;quot;, &amp;quot;version&amp;quot;: &amp;quot;1.0.0&amp;quot;, &amp;quot;display&amp;quot;: { &amp;quot;description&amp;quot;: &amp;quot;This is Amazon SQS connector&amp;quot;, &amp;quot;category&amp;quot;: &amp;quot;AWSSQS&amp;quot;, &amp;quot;visible&amp;quot;: true, &amp;quot;smallIcon&amp;quot;: &amp;quot;sqs.png&amp;quot; }, &amp;quot;ref&amp;quot;: &amp;quot;github.com/TIBCOSoftware/tci/examples/AWSSQS/connector/sqs&amp;quot;, &amp;quot;keyfield&amp;quot;: &amp;quot;name&amp;quot;, &amp;quot;settings&amp;quot;: [ { &amp;quot;name&amp;quot;: &amp;quot;name&amp;quot;, &amp;quot;type&amp;quot;: &amp;quot;string&amp;quot;, &amp;quot;required&amp;quot;: true, &amp;quot;display&amp;quot;: { &amp;quot;name&amp;quot;: &amp;quot;Connection Name&amp;quot;, &amp;quot;description&amp;quot;: &amp;quot;Name of the connection&amp;quot; } }, { &amp;quot;name&amp;quot;: &amp;quot;description&amp;quot;, &amp;quot;type&amp;quot;: &amp;quot;string&amp;quot;, &amp;quot;display&amp;quot;: { &amp;quot;name&amp;quot;: &amp;quot;Description&amp;quot;, &amp;quot;description&amp;quot;: &amp;quot;Connection description&amp;quot; } }, { &amp;quot;name&amp;quot;: &amp;quot;accessKeyId&amp;quot;, &amp;quot;type&amp;quot;: &amp;quot;string&amp;quot;, &amp;quot;required&amp;quot;: true, “display”: { &amp;quot;name&amp;quot;: &amp;quot;Access Key ID&amp;quot;, &amp;quot;description&amp;quot;: &amp;quot;AWS Access key ID for the user&amp;quot;, // Onlookers should not see your access key id value &amp;quot;type&amp;quot;: &amp;quot;password&amp;quot; } }, { &amp;quot;name&amp;quot;: &amp;quot;secreteAccessKey&amp;quot;, &amp;quot;type&amp;quot;: &amp;quot;string&amp;quot;, &amp;quot;required&amp;quot;: true, “display”: { &amp;quot;name&amp;quot;: &amp;quot;Secrete Access Key&amp;quot;, &amp;quot;description&amp;quot;: &amp;quot;AWS Secrete Access Key for the user&amp;quot;, // Onlookers should not see your secrete key value &amp;quot;type&amp;quot;: &amp;quot;password&amp;quot; } }, { &amp;quot;name&amp;quot;: &amp;quot;region&amp;quot;, &amp;quot;type&amp;quot;: &amp;quot;string&amp;quot;, &amp;quot;required&amp;quot;: true, “display”: { &amp;quot;name&amp;quot;: &amp;quot;Region&amp;quot;, &amp;quot;description&amp;quot;: &amp;quot;Name of the region where SQS service is running&amp;quot; } } ], &amp;quot;actions&amp;quot;: [ { // Lets validate the configuration by querying queues in the given region &amp;quot;name&amp;quot;: &amp;quot;Connect&amp;quot;, &amp;quot;actionId&amp;quot;: &amp;quot;connect&amp;quot;, “display”: { // Connect button will be disabled until all configuration values are provided &amp;quot;readonly&amp;quot;: true } } ] }  connector.</description>
+    </item>
+    
+    <item>
+      <title>Sending a message</title>
+      <link>https://tibcosoftware.github.io/tci-flogo/samples/amazon-sqs/sqs-send-message/</link>
+      <pubDate>Sat, 09 Apr 2016 16:50:16 +0200</pubDate>
+      
+      <guid>https://tibcosoftware.github.io/tci-flogo/samples/amazon-sqs/sqs-send-message/</guid>
+      <description>To send a message to Amazon SQS we&amp;rsquo;ll create a Send Message activity. The API that we follow is documented by Amazon.
+activity.json { &amp;quot;name&amp;quot;: &amp;quot;sqssendmessage&amp;quot;, &amp;quot;version&amp;quot;: &amp;quot;1.0.0&amp;quot;, &amp;quot;author&amp;quot;: &amp;quot;TIBCO Software Inc.&amp;quot;, &amp;quot;type&amp;quot;: &amp;quot;flogo:activity&amp;quot;, &amp;quot;title&amp;quot;: &amp;quot;Send SQS Message&amp;quot;, &amp;quot;display&amp;quot;: { &amp;quot;category&amp;quot;: &amp;quot;AWSSQS&amp;quot;, &amp;quot;visible&amp;quot;: true, &amp;quot;smallIcon&amp;quot;: &amp;quot;sqssendmessage.png&amp;quot;, &amp;quot;description&amp;quot;: &amp;quot;This activity sends a message to the standard queue&amp;quot; }, &amp;quot;ref&amp;quot;: &amp;quot;github.com/TIBCOSoftware/tci-flogo/examples/AWSSQS/activity/sqssendmessage&amp;quot;, &amp;quot;inputs&amp;quot;: [ { &amp;quot;name&amp;quot;: &amp;quot;sqsConnection&amp;quot;, &amp;quot;type&amp;quot;: &amp;quot;object&amp;quot;, &amp;quot;required&amp;quot;: true, &amp;quot;display&amp;quot;:{ &amp;quot;name&amp;quot;: &amp;quot;SQS Connection&amp;quot;, &amp;quot;description&amp;quot;: &amp;quot;Select SQS Connection&amp;quot;, &amp;quot;type&amp;quot;: &amp;quot;connection&amp;quot; }, &amp;quot;allowed&amp;quot;:[] }, { &amp;quot;name&amp;quot;: &amp;quot;queueUrl&amp;quot;, &amp;quot;type&amp;quot;: &amp;quot;string&amp;quot;, &amp;quot;required&amp;quot;: true, &amp;quot;display&amp;quot;:{ &amp;quot;name&amp;quot;: &amp;quot;Queue URL&amp;quot;, &amp;quot;description&amp;quot;: &amp;quot;Select Queue URL&amp;quot; }, &amp;quot;allowed&amp;quot;:[] }, { &amp;quot;name&amp;quot;: &amp;quot;MessageAttributeNames&amp;quot;, &amp;quot;type&amp;quot;: &amp;quot;array&amp;quot;, &amp;quot;required&amp;quot;: false, &amp;quot;display&amp;quot;: { &amp;quot;name&amp;quot;: &amp;quot;Message Attributes&amp;quot;, &amp;quot;description&amp;quot;: &amp;quot;Set message attributes&amp;quot;, &amp;quot;type&amp;quot;: &amp;quot;table&amp;quot;, &amp;quot;schema&amp;quot;: &amp;quot;{\r\n \&amp;quot;$schema\&amp;quot;: \&amp;quot;http:\/\/json-schema.</description>
+    </item>
+    
+    <item>
+      <title>Receiving a message</title>
+      <link>https://tibcosoftware.github.io/tci-flogo/samples/amazon-sqs/sqs-receive-message/</link>
+      <pubDate>Sat, 09 Apr 2016 16:50:16 +0200</pubDate>
+      
+      <guid>https://tibcosoftware.github.io/tci-flogo/samples/amazon-sqs/sqs-receive-message/</guid>
+      <description>To receive a message from Amazon SQS we&amp;rsquo;ll create a Receive Message activity. The API that we follow is documented by Amazon.
+activity.json { &amp;quot;name&amp;quot;: &amp;quot;sqsreceivemessage&amp;quot;, &amp;quot;title&amp;quot;: &amp;quot;Receive SQS Message&amp;quot;, &amp;quot;version&amp;quot;: &amp;quot;1.0.0&amp;quot;, &amp;quot;author&amp;quot;: &amp;quot;TIBCO Software Inc.&amp;quot;, &amp;quot;type&amp;quot;: &amp;quot;flogo:activity&amp;quot;, &amp;quot;display&amp;quot;: { &amp;quot;category&amp;quot;: &amp;quot;AWSSQS&amp;quot;, &amp;quot;visible&amp;quot;: true, &amp;quot;smallIcon&amp;quot;: &amp;quot;sqsreceivemessage.png&amp;quot;, &amp;quot;description&amp;quot;: &amp;quot;This activity receives a message from the standard queue&amp;quot; }, &amp;quot;ref&amp;quot;: &amp;quot;github.com/TIBCOSoftware/tci-flogo/examples/AWSSQS/activity/sqsreceivemessage&amp;quot;, &amp;quot;inputs&amp;quot;: [ { &amp;quot;name&amp;quot;: &amp;quot;sqsConnection&amp;quot;, &amp;quot;type&amp;quot;: &amp;quot;object&amp;quot;, &amp;quot;required&amp;quot;: true, &amp;quot;display&amp;quot;: { &amp;quot;name&amp;quot;: &amp;quot;SQS Connection&amp;quot;, &amp;quot;description&amp;quot;: &amp;quot;Select SQS Connection&amp;quot;, &amp;quot;type&amp;quot;: &amp;quot;connection&amp;quot; }, &amp;quot;allowed&amp;quot;: [] }, { &amp;quot;name&amp;quot;: &amp;quot;queueUrl&amp;quot;, &amp;quot;type&amp;quot;: &amp;quot;string&amp;quot;, &amp;quot;required&amp;quot;: true, &amp;quot;display&amp;quot;: { &amp;quot;name&amp;quot;: &amp;quot;Queue URL&amp;quot;, &amp;quot;description&amp;quot;: &amp;quot;Select Queue URL&amp;quot; }, &amp;quot;allowed&amp;quot;: [] }, { &amp;quot;name&amp;quot;: &amp;quot;deleteMessage&amp;quot;, &amp;quot;type&amp;quot;: &amp;quot;boolean&amp;quot;, &amp;quot;required&amp;quot;: false, &amp;quot;display&amp;quot;: { &amp;quot;name&amp;quot;: &amp;quot;Delete Received Message&amp;quot;, &amp;quot;description&amp;quot;: &amp;quot;Delete received message(s)&amp;quot; }, &amp;quot;value&amp;quot;: false }, { &amp;quot;name&amp;quot;: &amp;quot;AttributeNames&amp;quot;, &amp;quot;type&amp;quot;: &amp;quot;array&amp;quot;, &amp;quot;required&amp;quot;: false, &amp;quot;display&amp;quot;: { &amp;quot;name&amp;quot;: &amp;quot;Attribute Names&amp;quot;, &amp;quot;description&amp;quot;: &amp;quot;Name and type of attributes that you wish to receive&amp;quot;, &amp;quot;type&amp;quot;: &amp;quot;table&amp;quot;, &amp;quot;schema&amp;quot;: &amp;quot;{\r\n \&amp;quot;$schema\&amp;quot;: \&amp;quot;http:\/\/json-schema.</description>
+    </item>
+    
+  </channel>
+</rss>

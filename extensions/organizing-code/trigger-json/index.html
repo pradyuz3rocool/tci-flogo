@@ -1,0 +1,2168 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="generator" content="Hugo 0.39-DEV" />
+    <meta name="description" content="TIBCO Cloud Integration - Flogo SDK">
+<meta name="author" content="retgits">
+
+    <link rel="shortcut icon" href="https://www.tibco.com/sites/tibco/files/favicon_0.ico" type="image/vnd.microsoft.icon">
+    <title>trigger.json :: TIBCO Cloud Integration - Flogo SDK</title>
+    
+    
+    <link href="/tci-flogo/css/nucleus.css?1523556550" rel="stylesheet">
+    <link href="/tci-flogo/css/font-awesome.min.css?1523556550" rel="stylesheet">
+    <link href="/tci-flogo/css/hybrid.css?1523556550" rel="stylesheet">
+    <link href="/tci-flogo/css/featherlight.min.css?1523556550" rel="stylesheet">
+    <link href="/tci-flogo/css/perfect-scrollbar.min.css?1523556550" rel="stylesheet">
+    <link href="/tci-flogo/css/auto-complete.css?1523556550" rel="stylesheet">
+    <link href="/tci-flogo/css/theme.css?1523556550" rel="stylesheet">
+    <link href="/tci-flogo/css/hugo-theme.css?1523556550" rel="stylesheet">
+    
+      <link href="/tci-flogo/css/theme-blue.css?1523556550" rel="stylesheet">
+    
+
+    <script src="/tci-flogo/js/jquery-2.x.min.js?1523556550"></script>
+    
+    <style type="text/css">
+      :root #header + #content > #left > #rlblock_left{ 
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/tci-flogo/extensions/organizing-code/trigger-json/">
+    <nav id="sidebar" class="">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <svg id="icon-logo-tibco" viewBox="0 0 83 32" width="100%" height="100%">
+    <title>logo-tibco</title>
+    <path fill="#3e8ede" style="fill: var(--color11, #FFFFFF)" d="M9.361 6.199v16.837h-2.594v-16.837h-6.766v-2.471h16.126v2.471h-6.766z"></path>
+    <path fill="#3e8ede" style="fill: var(--color11, #FFFFFF)" d="M19.215 23.036v-19.308h2.595v19.308h-2.595z"></path>
+    <path fill="#3e8ede" style="fill: var(--color11, #FFFFFF)" d="M40.122 17.569c0 3.274-2.194 5.467-7.166 5.467h-6.581v-19.308h6.395c4.666 0 6.734 2.1 6.734 5.128 0 1.978-1.143 3.43-3.306 4.233 2.565 0.648 3.923 2.317 3.923 4.48zM32.986 6.138h-3.985v6.055c0.030 0 3.583 0 3.583 0 2.78 0 4.294-1.235 4.294-3.12 0-1.854-1.359-2.935-3.893-2.935zM32.801 14.571h-3.8v6.055h4.202c2.873 0 4.294-1.020 4.294-3.027 0.001-2.225-1.977-3.028-4.696-3.028z"></path>
+    <path fill="#3e8ede" style="fill: var(--color11, #FFFFFF)" d="M57.242 7.25c-1.699-1.112-3.274-1.637-5.282-1.637-4.202 0-7.014 2.904-7.014 7.693s2.842 7.847 7.075 7.847c2.070 0 4.109-0.834 5.467-1.884l0.433 2.626c-1.575 0.989-3.8 1.606-5.962 1.606-5.654 0-9.67-3.923-9.67-10.071s4.048-10.166 9.671-10.166c2.193 0 4.541 0.618 6.117 1.607l-0.835 2.378z"></path>
+    <path fill="#3e8ede" style="fill: var(--color11, #FFFFFF)" d="M73.985 4.626c-0.286-0.177-0.584-0.338-0.893-0.482-2.524 4.838-7.11 10.595-13.178 13.87 0.35 0.785 0.793 1.495 1.316 2.125 5.217-3.587 10.049-9.587 12.754-15.512z"></path>
+    <path fill="#3e8ede" style="fill: var(--color11, #FFFFFF)" d="M72.863 4.041c-1.248-0.543-2.661-0.834-4.194-0.834-5.676 0-9.686 4.381-9.686 10.149 0 0.973 0.103 1.89 0.298 2.746 5.806-2.367 10.966-7.584 13.582-12.061z"></path>
+    <path fill="#3e8ede" style="fill: var(--color11, #FFFFFF)" d="M74.203 4.762c-2.978 7.323-6.607 12.506-11.242 16.964 1.566 1.087 3.515 1.686 5.708 1.686 5.677 0 9.686-4.411 9.686-10.18 0-3.822-1.582-6.787-4.151-8.47z"></path>
+    <path fill="#3e8ede" style="fill: var(--color11, #FFFFFF)" d="M78.354 4.122v-0.015c0-1.361 1.103-2.507 2.494-2.507 1.404 0 2.494 1.132 2.494 2.494v0.014c0 1.362-1.103 2.508-2.494 2.508-1.404 0.001-2.494-1.132-2.494-2.493zM83.054 4.107v-0.014c0-1.218-0.946-2.222-2.207-2.222-1.247 0-2.207 1.018-2.207 2.235v0.015c0 1.218 0.946 2.221 2.207 2.221 1.247 0 2.207-1.017 2.207-2.236zM79.873 2.79h1.146c0.559 0 0.975 0.272 0.975 0.802 0 0.416-0.244 0.674-0.588 0.774l0.674 0.96h-0.587l-0.602-0.874h-0.531v0.874h-0.487v-2.536zM80.977 4.050c0.33 0 0.516-0.172 0.516-0.416 0-0.272-0.186-0.415-0.516-0.415h-0.617v0.831h0.617z"></path>
+</svg>
+    </div>
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/tci-flogo/introduction/" title="Introduction" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/tci-flogo/introduction/">
+          <i class="fa fa-home" aria-hidden="true"></i> Introduction
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/tci-flogo/getting-started/" title="Getting started" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/tci-flogo/getting-started/">
+          <i class="fa fa-bolt" aria-hidden="true"></i> Getting started
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/tci-flogo/getting-started/prerequisites/" title="Prerequisites" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/tci-flogo/getting-started/prerequisites/">
+          Prerequisites
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/tci-flogo/getting-started/prerequisites/flogo/" title="Use Project Flogo activities" class="dd-item ">
+        <a href="/tci-flogo/getting-started/prerequisites/flogo/">
+        Use Project Flogo activities
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/tci-flogo/getting-started/prerequisites/new-activities/" title="Create new activities" class="dd-item ">
+        <a href="/tci-flogo/getting-started/prerequisites/new-activities/">
+        Create new activities
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/tci-flogo/getting-started/dev-environment/" title="Set up your environment" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/tci-flogo/getting-started/dev-environment/">
+          Set up your environment
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/tci-flogo/getting-started/dev-environment/intellij-webstorm/" title="Using IntelliJ WebStorm" class="dd-item ">
+        <a href="/tci-flogo/getting-started/dev-environment/intellij-webstorm/">
+        Using IntelliJ WebStorm
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/tci-flogo/getting-started/dev-environment/vscode/" title="Using VS Code" class="dd-item ">
+        <a href="/tci-flogo/getting-started/dev-environment/vscode/">
+        Using VS Code
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/tci-flogo/tooling/" title="Tooling" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/tci-flogo/tooling/">
+          <i class="fa fa-angle-double-right" aria-hidden="true"></i> Tooling
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/tci-flogo/tooling/tooling/" title="fe-cli" class="dd-item ">
+        <a href="/tci-flogo/tooling/tooling/">
+        <i class="fa fa-terminal" aria-hidden="true"></i> fe-cli
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/tci-flogo/extensions/" title="Building extensions" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/tci-flogo/extensions/">
+          <i class="fa fa-wrench" aria-hidden="true"></i> Building extensions
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/tci-flogo/extensions/organizing-code/" title="Organizing your code" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/tci-flogo/extensions/organizing-code/">
+          Organizing your code
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/tci-flogo/extensions/organizing-code/connector-json/" title="connector.json" class="dd-item ">
+        <a href="/tci-flogo/extensions/organizing-code/connector-json/">
+        connector.json
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/tci-flogo/extensions/organizing-code/connector-ts/" title="connector.ts" class="dd-item ">
+        <a href="/tci-flogo/extensions/organizing-code/connector-ts/">
+        connector.ts
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/tci-flogo/extensions/organizing-code/activity-json/" title="activity.json" class="dd-item ">
+        <a href="/tci-flogo/extensions/organizing-code/activity-json/">
+        activity.json
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/tci-flogo/extensions/organizing-code/activity-go/" title="activity.go" class="dd-item ">
+        <a href="/tci-flogo/extensions/organizing-code/activity-go/">
+        activity.go
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/tci-flogo/extensions/organizing-code/activity-ts/" title="activity.ts" class="dd-item ">
+        <a href="/tci-flogo/extensions/organizing-code/activity-ts/">
+        activity.ts
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/tci-flogo/extensions/organizing-code/trigger-json/" title="trigger.json" class="dd-item active">
+        <a href="/tci-flogo/extensions/organizing-code/trigger-json/">
+        trigger.json
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/tci-flogo/extensions/organizing-code/trigger-ts/" title="trigger.ts" class="dd-item ">
+        <a href="/tci-flogo/extensions/organizing-code/trigger-ts/">
+        trigger.ts
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/tci-flogo/extensions/organizing-code/trigger-go/" title="trigger.go" class="dd-item ">
+        <a href="/tci-flogo/extensions/organizing-code/trigger-go/">
+        trigger.go
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/tci-flogo/extensions/organizing-code/display-settings/" title="Display settings" class="dd-item ">
+        <a href="/tci-flogo/extensions/organizing-code/display-settings/">
+        Display settings
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/tci-flogo/extensions/upload/" title="Upload to TCI" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/tci-flogo/extensions/upload/">
+          Upload to TCI
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/tci-flogo/sdk/" title="SDK" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/tci-flogo/sdk/">
+          <i class="fa fa-list-alt" aria-hidden="true"></i> SDK
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/tci-flogo/samples/" title="Samples" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/tci-flogo/samples/">
+          <i class="fa fa-cogs" aria-hidden="true"></i> Samples
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/tci-flogo/samples/concat/" title="Concat" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/tci-flogo/samples/concat/">
+          Concat
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/tci-flogo/samples/concat/simple-concat/" title="Simple concat" class="dd-item ">
+        <a href="/tci-flogo/samples/concat/simple-concat/">
+        Simple concat
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/tci-flogo/samples/concat/separator-concat/" title="Adding a separator token" class="dd-item ">
+        <a href="/tci-flogo/samples/concat/separator-concat/">
+        Adding a separator token
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/tci-flogo/samples/concat/ui-choices-concat/" title="Adding more UI options" class="dd-item ">
+        <a href="/tci-flogo/samples/concat/ui-choices-concat/">
+        Adding more UI options
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/tci-flogo/samples/amazon-sqs/" title="Amazon SQS" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/tci-flogo/samples/amazon-sqs/">
+          Amazon SQS
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/tci-flogo/samples/amazon-sqs/sqs-connector/" title="Connector" class="dd-item ">
+        <a href="/tci-flogo/samples/amazon-sqs/sqs-connector/">
+        Connector
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/tci-flogo/samples/amazon-sqs/sqs-send-message/" title="Sending a message" class="dd-item ">
+        <a href="/tci-flogo/samples/amazon-sqs/sqs-send-message/">
+        Sending a message
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/tci-flogo/samples/amazon-sqs/sqs-receive-message/" title="Receiving a message" class="dd-item ">
+        <a href="/tci-flogo/samples/amazon-sqs/sqs-receive-message/">
+        Receiving a message
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/tci-flogo/contribute/" title="Contribute" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/tci-flogo/contribute/">
+          <i class="fa fa-share-alt" aria-hidden="true"></i> Contribute
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+      <section id="shortcuts">
+        <h3></h3>
+        <ul>
+          
+              <li class="" role=""> 
+                  <a class="padding" href="https://github.com/TIBCOSoftware/tci-flogo"><i class='fa fa-github'></i> Github repo</a>
+              </li>
+          
+              <li class="" role=""> 
+                  <a class="padding" href="https://tibcosoftware.github.io/tci-awesome"><i class='fa fa-camera'></i> Showcases</a>
+              </li>
+          
+              <li class="" role=""> 
+                  <a class="padding" href="https://integration.cloud.tibco.com/docs/index.html"><i class='fa fa-book'></i> TCI docs</a>
+              </li>
+          
+              <li class="" role=""> 
+                  <a class="padding" href="https://tibcosoftware.github.io/tci-flogo/wi-studio/v1.3.0/"><i class='fa fa-book'></i> Designtime API docs v1.3.0</a>
+              </li>
+          
+              <li class="" role=""> 
+                  <a class="padding" href="https://tibcosoftware.github.io/tci-flogo/wi-runtime/v1.3.0/pkg/github.com/index.html"><i class='fa fa-book'></i> Runtime API docs v1.3.0</a>
+              </li>
+          
+        </ul>
+      </section>
+    
+
+    
+    <section id="footer">
+      <center>
+    
+    <a class="github-button" href="https://github.com/TIBCOSoftware/tci-webintegrator/archive/master.zip" data-icon="octicon-cloud-download" aria-label="Download TIBCOSoftware/tci-webintegrator on GitHub">Download</a>
+
+    
+    <a class="github-button" href="https://github.com/TIBCOSoftware/tci-webintegrator" data-icon="octicon-star" data-show-count="true" aria-label="Star TIBCOSoftware/tci-webintegrator on GitHub">Star</a>
+
+    
+    <a class="github-button" href="https://github.com/TIBCOSoftware/tci-webintegrator/fork" data-icon="octicon-repo-forked" data-show-count="true" aria-label="Fork TIBCOSoftware/tci-webintegrator on GitHub">Fork</a>
+
+</center>
+
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+    </section>
+  </div>
+</nav>
+
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable sticky-parent">
+              
+              <div class="sticky-spacer">
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fa fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fa fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/tci-flogo/'></a> > <a href='/tci-flogo/extensions/'>Building extensions</a> > <a href='/tci-flogo/extensions/organizing-code/'>Organizing your code</a> > trigger.json
+          
+         
+          
+         
+          
+         
+          
+           
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#trigger-json-sections">Trigger JSON sections</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#validation">Validation</a></li>
+<li><a href="#configuring-your-user-interface">Configuring your user interface</a>
+<ul>
+<li><a href="#configuration">Configuration</a></li>
+<li><a href="#output">Output</a></li>
+<li><a href="#output-settings">Output settings</a></li>
+<li><a href="#model-for-simple-trigger">Model for simple Trigger</a></li>
+<li><a href="#model-for-json-schema-based-output">Model for JSON schema based output</a></li>
+<li><a href="#model-for-user-defined-schema-based-output">Model for user defined schema based output</a></li>
+<li><a href="#model-for-table">Model for table</a></li>
+<li><a href="#model-for-using-connection">Model for using connection</a></li>
+<li><a href="#model-for-trigger-with-wizard-steps">Model for trigger with wizard steps</a></li>
+<li><a href="#using-css-to-define-custom-styles-in-wizard">Using CSS to define custom styles in wizard</a>
+<ul>
+<li><a href="#example1"><code>Example1</code>:</a></li>
+<li><a href="#example2"><code>Example2</code>:</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+
+        
+        <div id="body-inner">
+          
+            <h1>trigger.json</h1>
+          
+
+        
+
+
+
+
+<p>The <code>trigger.json</code> file describes the model, the metadata, of the trigger. It describes, among other things, what the input and outputs are, who built it and which version you&rsquo;re using.
+Every trigger contribution must define its model in <code>trigger.json</code> file.This model is shared by both UI and runtime. The trigger model contains following parts:</p>
+
+<h4 id="trigger-json-sections">Trigger JSON sections</h4>
+
+<ol>
+<li><code>settings</code> - Zero or more fields that contribute to the trigger configuration. * It is the common configuration for all handlers of same trigger type.</li>
+<li><code>handler</code> - A trigger must define a handler. It contains zero or more fields that contribute to the handler configuration. All handlers of the same type are grouped together in the WI application.</li>
+<li><code>outputs</code> - Zero or more fields that contribute to trigger output</li>
+<li><code>contrib: display/sections</code> - A UI grouping which defines the Tabs(Names) in a property sheet view of a Trigger/Activity</li>
+
+<li><p><code>contrib: display/wizard</code>- A UI grouping which defines the Step(Names) in a Wizard dialog step view of Trigger</p>
+
+<pre><code class="language-json">{
+// Identifier for the trigger. It should be unique and must not contain spaces or special characters.
+&quot;name&quot;: &quot;Demo&quot;,
+ 
+//Author of this trigger
+&quot;author&quot;: &quot;TIBCO Software Inc.&quot;,
+     
+// Indicates that it is a trigger model
+&quot;type&quot;: &quot;flogo:trigger&quot;,
+ 
+// Version of the trigger
+&quot;version&quot;: &quot;1.0.0&quot;,
+ 
+// Display Title
+&quot;title&quot;: &quot;Demo Trigger&quot;,
+// trigger display configuration
+&quot;display&quot;: {
+ 
+   // trigger description
+   &quot;description&quot;: &quot;This is demo trigger&quot;,
+        
+   //Unique trigger ID without spaces
+   &quot;uid&quot;: &quot;tibco-demo&quot;,
+ 
+ 
+   // Category under which this trigger will be displayed
+   &quot;category&quot;: &quot;DEMO&quot;,
+ 
+   // Make this trigger visible/invisible under given category
+   &quot;visible&quot;: true,
+ 
+ 
+   //  A UI grouping which defines the Tabs(Names) in a property sheet view of a Trigger/Activity
+    &quot;sections&quot;: [ &quot;Tab 1 Name&quot;, &quot;Tab 2 Name&quot;],
+ 
+ 
+   // A UI grouping which defines the Step(Names) in a Wizard dialog step view of Trigger
+   // A Wizard  will show the text below to inform the step it is showing for input.
+    &quot;wizard&quot;: [ &quot;Step 1&quot;, &quot;Step 2&quot; ],
+        
+   // Path to the small icon file.
+   // Size Limit:1KB
+   // Format: PNG
+   &quot;smallIcon&quot;: &quot;demo-small-icon.png&quot;,
+ 
+ 
+   // Path to the small icon file.
+   // Size Limit: 2KB
+   // Format: PNG
+   &quot;largeIcon&quot;: &quot;demo-large-icon.png&quot;
+},
+ 
+// If trigger expects a reply from the flow through Reply activity, this must be set to true.
+&quot;useReplyHandler&quot;: false
+ 
+&quot;ref&quot;: &quot;git.tibco.com/demo-trigger/trigger/&lt;CATEGORY&gt;/&lt;LOWER CASE TRIGGER NAME&gt;&quot;,
+     
+// trigger configuration.
+// It is common configuration for all handlers. e.g. HTTP path
+&quot;settings&quot;: [
+       {
+        // Name of the field that would be set in the trigger configuration.
+        &quot;name&quot;: &quot;path&quot;,
+ 
+        // Runtime datatype of the field. 
+        &quot;type&quot;: &quot;string&quot;,
+ 
+ 
+        // Is required field.
+        &quot;required&quot;: true,
+             
+        // Optional field display configuration.
+        “display”: {
+          ....
+        },
+        // Wizard is only applicable when in trigger input wizard mode.
+        &quot;wizard&quot; : {
+            &quot;step&quot; : &quot;Step -1 string&quot;,
+            &quot;name&quot; : &quot;Field display name in wizard string&quot;
+            &quot;type&quot; : &quot;selectButtons&quot;,
+            &quot;css&quot; : {
+                      // event:regex match -&gt; CSS string
+                      &quot;IDEAL:GET*&quot; : &quot;{ color: blue;}&quot;,
+                      &quot;SELECTED:PUT*&quot; : &quot;&quot;
+                    }
+        }
+      }
+      .....
+],
+ 
+// Event handler.
+&quot;handler&quot;: {
+  // Handler specific configuration.
+  // A configuration that should be unique to the handler. e.g. HTTP method name must be unique for REST trigger handler.
+  &quot;settings&quot;: [
+       {
+        // Name of the field that would be set in the trigger configuration.
+        &quot;name&quot;: &quot;method&quot;,
+        // Runtime datatype of the field. 
+        &quot;type&quot;: &quot;string&quot;,
+        // Is required field.
+        &quot;required&quot;: true,
+             
+        // Optional field display configuration.
+        “display”: {
+          ....
+        }
+      }
+      .....
+ ]
+}
+ 
+// trigger output
+&quot;outputs&quot;: [
+       {
+        // Name of the field that would be set in the trigger output.
+        &quot;name&quot;: &quot;field1&quot;,
+ 
+ 
+        // Runtime datatype of the field. 
+        &quot;type&quot;: &quot;string&quot;,
+             
+        // Optional field display configuration.
+        “display”: {
+          ....
+        }
+      }
+      .....
+]
+// Clickable buttons to be displayed on UI
+// Upon click, WiServiceHandlerContribution.handleAction(&lt;&lt;ActionId&gt;, &lt;&lt;Connector Configuration&gt;&gt;) would be called.
+&quot;actions&quot;: [
+      {
+        // Label of the button
+        &quot;name&quot;: &quot;Finish&quot;
+      },
+  
+      .....
+]
+}
+</code></pre>
+
+<h2 id="validation">Validation</h2>
+
+<p>When creating the <code>trigger.json</code> file, there are a few validation rules that you need take into account:</p></li>
+</ol>
+
+<ul>
+<li><strong>name</strong>: The name cannot start with &ldquo;tibco-&rdquo; and should only contain alphanumeric chararcters and underscores</li>
+<li><strong>title</strong>: The title of your trigger (which also shows up on your trigger palette) should only contain alphanumeric chararcters and spaces</li>
+<li><strong>version</strong>: The version of your trigger follows the semver notation (x.y.z), with numeric characters separated by dots</li>
+<li><strong>type</strong>: The type must always be <strong>flogo:trigger</strong></li>
+<li><strong>ref</strong>: The ref field must be in the form of <code>&lt;category&gt;/trigger/&lt;triggername&gt;</code> and the category and trigger name must be the exact same case as the category and name specified above</li>
+<li><strong>type</strong> <em>under inputs</em>: The <a href="../display-settings">type</a> can be either one of the types in the <a href="../display-settings/#types">Types</a> section if it is part of the input or the <a href="../display-settings/#special-types">Special types</a> if it is part of the display section.</li>
+</ul>
+
+<h2 id="configuring-your-user-interface">Configuring your user interface</h2>
+
+<p>The user interface is divided into five main sections and these sections are populated based on the configuration you create above. The five main sections are:</p>
+
+<ul>
+<li>Configuration</li>
+<li>Output</li>
+<li>Output settings</li>
+</ul>
+
+<h3 id="configuration">Configuration</h3>
+
+<p>Any element in the <strong>settings</strong> section of your trigger.json that has a <strong>display</strong> element associated with it will be shown in the configuration section:</p>
+
+<pre><code class="language-json">{
+    &quot;name&quot;: &quot;url&quot;,
+    &quot;type&quot;: &quot;string&quot;,
+    &quot;required&quot;: true,
+    “display”: {
+        &quot;name&quot;:&quot;Service URL&quot;
+    }
+    &quot;value&quot;: &quot;http://myservice.sample.com&quot;
+}
+</code></pre>
+
+<h3 id="output">Output</h3>
+
+<p>Any element in the <strong>outputs</strong> section of your <code>trigger.json</code> file that doesn&rsquo;t have a <strong>display</strong> element associated with it will be shown in the output section so you use it in the inputs for activities in the rest of your flow.</p>
+
+<pre><code class="language-json">{
+    &quot;name&quot;: &quot;result&quot;,
+    &quot;type&quot;: &quot;string&quot;
+}
+</code></pre>
+
+<h3 id="output-settings">Output settings</h3>
+
+<p>Any element in the <strong>outputs</strong> section of your <code>trigger.json</code> file that has a <strong>display</strong> element associated with it and has a schema associated with it will be shown in the Output settings section. Note that you also need to set the <strong>mappable</strong> element to true.</p>
+
+<pre><code class="language-json">{
+    &quot;name&quot;: &quot;body&quot;,
+    &quot;type&quot;: &quot;complex_object&quot;,
+    &quot;required&quot;: true,
+    “display”: {
+        &quot;name&quot;:&quot;Response Schema&quot;,
+        &quot;type&quot;:&quot;texteditor&quot;,
+        &quot;syntax&quot;:&quot;json&quot;
+    }
+}
+
+</code></pre>
+
+<h3 id="model-for-simple-trigger">Model for simple Trigger</h3>
+
+<p>In this case, both inputs will be displayed in the Configuration section and values can only be statically configured.</p>
+
+<pre><code class="language-json">{
+    &quot;name&quot;: &quot;Notification&quot;,
+    &quot;type&quot;: &quot;flogo:trigger&quot;,
+    &quot;version&quot;: &quot;1.0.0&quot;,
+    &quot;display&quot;: {
+       &quot;description&quot;: &quot;This trigger generates a notification at given interval&quot;,
+       &quot;category&quot;: &quot;Alert&quot;,
+       &quot;visible&quot;: true,
+       &quot;wizard&quot; : [&quot;step-1&quot;, &quot;step-2&quot; ]
+       &quot;smallIcon&quot;: &quot;icons/trigger-small-icon.png&quot;,
+       &quot;largeIcon&quot;: &quot;icons/trigger-large-icon.png&quot;
+    },
+    &quot;ref&quot;: &quot;trigger/Alert/notification&quot;,
+    &quot;settings&quot;: [
+    ],
+    &quot;handler&quot;: {
+        &quot;settings&quot;: [
+            {
+                &quot;name&quot;: &quot;interval&quot;,
+                &quot;type&quot;: &quot;integer&quot;,
+                &quot;display&quot;: {
+                    &quot;description&quot;: &quot;The time interval to send a notification&quot;,
+                    &quot;name&quot;: &quot;Time Interval&quot;
+                },
+                &quot;value&quot;: 1,
+                &quot;required&quot;: true
+            },
+            {
+                &quot;name&quot;: &quot;Interval Unit&quot;,
+                &quot;type&quot;: &quot;string&quot;,
+                &quot;required&quot;: true,
+                &quot;display&quot;: {
+                    &quot;description&quot;: &quot;The unit of time interval&quot;,
+                    &quot;name&quot;: &quot;Interval Unit&quot;,
+                    &quot;type&quot;: &quot;dropdown&quot;
+                },
+                &quot;value&quot;: &quot;Second&quot;,
+                &quot;allowed&quot;: [
+                    &quot;Second&quot;,
+                    &quot;Minute&quot;,
+                    &quot;Hour&quot;,
+                    &quot;Day&quot;,
+                    &quot;Week&quot;
+                ]
+            }
+        ]
+    },       
+    &quot;outputs&quot;: [
+           {
+            &quot;name&quot;: &quot;result&quot;,
+            &quot;type&quot;: &quot;string&quot;
+          }
+    ]
+}
+</code></pre>
+
+<h3 id="model-for-json-schema-based-output">Model for JSON schema based output</h3>
+
+<p>In this case, the output is defined by the JSON schema. A tree constructed from the JSON schema would be displayed in the Output section.</p>
+
+<pre><code class="language-json">{
+    &quot;name&quot;: &quot;Notification&quot;,
+    &quot;version&quot;: &quot;1.0.0&quot;,
+    &quot;type&quot;: &quot;flogo:trigger&quot;,
+    &quot;display&quot;: {
+       &quot;description&quot;: &quot;This trigger generates a notification at given interval&quot;,
+       &quot;category&quot;: &quot;Alert&quot;,
+       &quot;visible&quot;: true,
+       &quot;smallIcon&quot;: &quot;icons/trigger-small-icon.png&quot;,
+       &quot;largeIcon&quot;: &quot;icons/trigger-large-icon.png&quot;
+    },
+    &quot;ref&quot;: &quot;trigger/Alert/notification&quot;,
+    &quot;settings&quot;: [
+    ],
+    &quot;handler&quot;: {
+        &quot;settings&quot;: [
+        ]
+    },       
+    &quot;outputs&quot;: [
+           {
+            &quot;name&quot;: &quot;output&quot;,
+            &quot;type&quot;: &quot;complex_object&quot;,
+            &quot;value&quot;: &quot;{\&quot;$schema\&quot;:\&quot;http:\/\/json-schema.org\/draft-04\/schema#\&quot;,\&quot;definitions\&quot;:{},\&quot;id\&quot;:\&quot;http:\/\/example.com\/example.json\&quot;,\&quot;items\&quot;:{\&quot;id\&quot;:\&quot;\/items\&quot;,\&quot;properties\&quot;:{\&quot;string\&quot;:{\&quot;id\&quot;:\&quot;\/items\/properties\/string\&quot;,\&quot;type\&quot;:\&quot;string\&quot;}},\&quot;type\&quot;:\&quot;object\&quot;},\&quot;type\&quot;:\&quot;array\&quot;}&quot;
+          }
+    ]
+}
+</code></pre>
+
+<h3 id="model-for-user-defined-schema-based-output">Model for user defined schema based output</h3>
+
+<p>In this case, users will input a JSON data in the Output Settings section. A tree constructed from the JSON would be displayed in the Output section.</p>
+
+<pre><code class="language-json">{
+    &quot;name&quot;: &quot;Notification&quot;,
+    &quot;version&quot;: &quot;1.0.0&quot;,
+    &quot;type&quot;: &quot;flogo:trigger&quot;,
+    &quot;display&quot;: {
+       &quot;description&quot;: &quot;This trigger generates a notification at given interval&quot;,
+       &quot;category&quot;: &quot;Alert&quot;,
+       &quot;visible&quot;: true,
+       &quot;smallIcon&quot;: &quot;icons/trigger-small-icon.png&quot;,
+       &quot;largeIcon&quot;: &quot;icons/trigger-large-icon.png&quot;
+    },
+    &quot;ref&quot;: &quot;trigger/Alert/notification&quot;,
+    &quot;settings&quot;: [
+    ],
+    &quot;handler&quot;: {
+        &quot;settings&quot;: [
+        ]
+    },       
+    &quot;outputs&quot;: [
+           {
+            &quot;name&quot;: &quot;output&quot;,
+            &quot;type&quot;: &quot;complex_object&quot;,
+            &quot;display&quot;: {
+              &quot;name&quot;:&quot;Enter JSON Data/Schema&quot;,
+              &quot;type&quot;: &quot;texteditor&quot;,
+              &quot;syntax&quot;: &quot;json&quot;
+            }
+          }
+    ]
+}
+</code></pre>
+
+<h3 id="model-for-table">Model for table</h3>
+
+<p>In this case, table will be displayed in the Input Setting and Output settings. Users can add one or more entries into the table which can be displayed in the Input section and Output section.</p>
+
+<pre><code class="language-json">{
+    &quot;name&quot;: &quot;Notification&quot;,
+    &quot;version&quot;: &quot;1.0.0&quot;,
+    &quot;type&quot;: &quot;flogo:trigger&quot;,
+    &quot;display&quot;: {
+       &quot;description&quot;: &quot;This trigger generates a notification at given interval&quot;,
+       &quot;category&quot;: &quot;Alert&quot;,
+       &quot;visible&quot;: true,
+       &quot;smallIcon&quot;: &quot;icons/trigger-small-icon.png&quot;,
+       &quot;largeIcon&quot;: &quot;icons/trigger-large-icon.png&quot;
+    },
+    &quot;ref&quot;: &quot;trigger/Alert/notification&quot;,
+    &quot;settings&quot;: [
+    ],
+    &quot;handler&quot;: {
+        &quot;settings&quot;: [
+        ]
+    },       
+    &quot;outputs&quot;: [
+           {
+            &quot;name&quot;: &quot;output&quot;,
+            &quot;type&quot;: &quot;complex_object&quot;,
+            &quot;display&quot;: {
+              &quot;name&quot;:&quot;Add Numbers&quot;,
+              &quot;type&quot;: &quot;table&quot;,
+              &quot;schema&quot;: &quot;{\&quot;type\&quot;:\&quot;array\&quot;,\&quot;items\&quot;:{\&quot;type\&quot;:\&quot;object\&quot;,\&quot;properties\&quot;:{\&quot;Number\&quot;:{\&quot;type\&quot;:\&quot;string\&quot;},\&quot;Type\&quot;:{\&quot;type\&quot;:\&quot;number\&quot;}}}}&quot;
+            }
+      }
+    ]
+}
+</code></pre>
+
+<h3 id="model-for-using-connection">Model for using connection</h3>
+
+<p>In this case, trigger refers to a JDBC connection. It is up to the trigger to fetch list of connections using Connector helper API.</p>
+
+<pre><code class="language-json">{
+    &quot;name&quot;: &quot;Notification&quot;,
+    &quot;version&quot;: &quot;1.0.0&quot;,
+    &quot;type&quot;: &quot;flogo:trigger&quot;,
+    &quot;display&quot;: {
+       &quot;description&quot;: &quot;This trigger generates a notification at given interval&quot;,
+       &quot;category&quot;: &quot;Alert&quot;,
+       &quot;visible&quot;: true,
+       &quot;smallIcon&quot;: &quot;icons/trigger-small-icon.png&quot;,
+       &quot;largeIcon&quot;: &quot;icons/trigger-large-icon.png&quot;
+    },
+    &quot;ref&quot;: &quot;trigger/Alert/notification&quot;,
+    &quot;settings&quot;: [
+    ],
+    &quot;handler&quot;: {
+        &quot;settings&quot;: [
+          {
+            &quot;name&quot;: &quot;connection&quot;,
+            &quot;type&quot;: &quot;complex_object&quot;,
+            &quot;required&quot;: true,
+            &quot;display&quot;: {
+              &quot;name&quot;:&quot;Select JDBC Connection&quot;,
+              &quot;type&quot;: &quot;connection&quot;
+            },
+            &quot;allowed&quot;:[]
+          }
+        ]
+    },       
+    &quot;outputs&quot;: [
+            
+    ]
+}
+</code></pre>
+
+<h3 id="model-for-trigger-with-wizard-steps">Model for trigger with wizard steps</h3>
+
+<p>In this case the trigger json is setup to emulate a wizard where the user is navigating through a series of steps to configure the trigger and subsequent flows. This is powerful use case where the trigger can create a single or multiple flows based on the definition. A wizard mode consists of a number or steps where the user can navigate back and forth until the Finish stage is reached.
+At the end of the finish the Trigger needs to send a <code>ICreateFlowActionResult</code> back to the studio. The <code>ICreateFlowActionResult</code> is created using the TCI Flogo Studio SDK.</p>
+
+<pre><code class="language-json">{
+    &quot;title&quot;: &quot;Receive Message&quot;,
+    &quot;name&quot;: &quot;tibco-trigger&quot;,
+    &quot;version&quot;: &quot;1.0.0&quot;,
+    &quot;type&quot;: &quot;flogo:trigger&quot;,
+    &quot;display&quot;: {
+        &quot;category&quot;: &quot;Tibco&quot;,
+        &quot;visible&quot;: true,
+        &quot;description&quot;: &quot;Tibco Trigger&quot;,
+        &quot;smallIcon&quot;: &quot;icons/ic-tibco-trigger@2x.png&quot;,
+        &quot;largeIcon&quot;: &quot;icons/ic-tibco-trigger@3x.png&quot;,
+        &quot;wizard&quot;: [&quot;Choose Connection&quot;, &quot;Choose Object&quot;]
+    },
+    &quot;ref&quot;: &quot;.........&quot;,
+    &quot;handler&quot;: {
+        &quot;settings&quot;: [{
+                &quot;name&quot;: &quot;Connection Name&quot;,
+                &quot;required&quot;: true,
+                &quot;type&quot;: &quot;object&quot;,
+                &quot;display&quot;: {
+                    &quot;name&quot;: &quot;Connection&quot;,
+                    &quot;description&quot;: &quot;Select a connection&quot;,
+                    &quot;type&quot;: &quot;connection&quot;,
+                    &quot;visible&quot;: true
+                },
+                &quot;wizard&quot;: {
+                    &quot;type&quot;: &quot;dropdown&quot;,
+                    &quot;selection&quot;: &quot;single&quot;,
+                    &quot;step&quot;: &quot;Choose Connection&quot;
+                },
+                &quot;allowed&quot;: []
+            },
+            {
+                &quot;name&quot;: &quot;Object Name&quot;,
+                &quot;type&quot;: &quot;string&quot;,
+                &quot;required&quot;: true,
+                &quot;allowed&quot;: [],
+                &quot;display&quot;: {
+                    &quot;name&quot;: &quot;Object&quot;,
+                    &quot;description&quot;: &quot;Business object name&quot;,
+                    &quot;type&quot;: &quot;dropdown&quot;,
+                    &quot;selection&quot;: &quot;single&quot;,
+                    &quot;visible&quot;: true
+                },
+                &quot;wizard&quot;: {
+                    &quot;type&quot;: &quot;dropdown&quot;,
+                    &quot;selection&quot;: &quot;single&quot;,
+                    &quot;step&quot;: &quot;Choose Object&quot;
+                }
+            }
+        ]
+    },
+    &quot;outputs&quot;: [{
+        &quot;name&quot;: &quot;output&quot;,
+        &quot;type&quot;: &quot;complex_object&quot;
+    }]
+}
+</code></pre>
+
+<h3 id="using-css-to-define-custom-styles-in-wizard">Using CSS to define custom styles in wizard</h3>
+
+<p>The contribution developer can define custom styles for any UI component in wizard using the CSS property under wizard. The CSS uses the field name as the unique id for the UI component.</p>
+
+<h4 id="example1"><code>Example1</code>:</h4>
+
+<p>Consider that trigger model has a simple text box like</p>
+
+<pre><code class="language-json">{
+    &quot;name&quot;: &quot;Path&quot;,
+    &quot;type&quot;: &quot;string&quot;,
+    &quot;required&quot;: true,
+    ........
+    &quot;wizard&quot;: {
+        &quot;name&quot;: &quot;Resource path&quot;,
+        &quot;type&quot;: &quot;string&quot;,
+        &quot;step&quot;: &quot;Step 1&quot;
+    }
+}
+</code></pre>
+
+<p>For the above Path field, you can apply styles using the standard CSS and <em><code>pseudo-classes</code></em> like</p>
+
+<pre><code class="language-json">{
+    &quot;name&quot;: &quot;Path&quot;,
+    &quot;type&quot;: &quot;string&quot;,
+    &quot;required&quot;: true,
+    ........
+    &quot;wizard&quot;: {
+        &quot;name&quot;: &quot;Resource path&quot;,
+        &quot;type&quot;: &quot;string&quot;,
+        &quot;step&quot;: &quot;Step 1&quot;,
+        &quot;css&quot;: {
+            &quot;#Path:default&quot;: &quot;{border: 1px solid #000, ......}&quot;, // Path is the field name and these styles for default case or ideal case
+            &quot;#Path:hover&quot;: &quot;{border: 1px solid #FF0, .........}&quot; // These styles are applied when hover on a element. For more pseudo-classes look at https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes
+        }
+    }
+},
+</code></pre>
+
+<h4 id="example2"><code>Example2</code>:</h4>
+
+<p>For complex widgets like selectButtons there will be multiple options and in order to add CSS for each option the CSS selector will have option id after field name i.e</p>
+
+<pre><code class="language-json">{
+    &quot;name&quot;: &quot;Method&quot;,
+    &quot;type&quot;: &quot;string&quot;,
+    &quot;required&quot;: true,
+    &quot;allowed&quot;: [
+        &quot;GET&quot;,
+        &quot;POST&quot;,
+        &quot;PUT&quot;,
+        &quot;DELETE&quot;
+    ],
+    .........
+    &quot;wizard&quot;: {
+        &quot;type&quot;: &quot;selectButtons&quot;,
+        &quot;selection&quot;: &quot;multiple&quot;,
+        &quot;step&quot;: &quot;Step 1&quot;,
+        &quot;css&quot;: {
+            // Field name Method followed by the option unique id(i.e value) and then pseudo class
+            &quot;#Method #GET:default&quot;: &quot;{ border: dotted 4px #4dbdc7;color: #4dbdc7;}&quot;, // This is the style for GET button in default case
+            &quot;#Method #POST:default&quot;: &quot;{ border: dotted 4px #89a857;color: #89a857;}&quot;, // This is the style for POST button in default case
+            &quot;#Method #PUT:default&quot;: &quot;{ border: dotted 4px #efb416;color: #efb416;}&quot;,
+            &quot;#Method #DELETE:default&quot;: &quot;{ border: dotted 4px #d3418c;color: #d3418c;}&quot;,
+            &quot;#Method #GET:checked&quot;: &quot;{background-color: #0fbfc7;border: solid 4px #4dbdc7;}&quot;, // This is the style for GET button in mouseover case
+            &quot;#Method #POST:checked&quot;: &quot;{background-color: #89a857;border: solid 4px #89a857;}&quot;, // This is the style for POST button in mouseover case
+            &quot;#Method #PUT:checked&quot;: &quot;{background-color: #efb416;border: solid 4px #efb416;}&quot;,
+            &quot;#Method #DELETE:checked&quot;: &quot;{background-color: #d3418c;border: solid 4px #d3418c;}&quot;
+        }
+    }
+}
+</code></pre>
+
+
+<footer class=" footline" >
+	
+</footer>
+
+
+        
+        </div> 
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+        
+            <a class="nav nav-prev" href="/tci-flogo/extensions/organizing-code/activity-ts/" title="activity.ts"> <i class="fa fa-chevron-left"></i></a>
+        
+        
+            <a class="nav nav-next" href="/tci-flogo/extensions/organizing-code/trigger-ts/" title="trigger.ts" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+        
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/tci-flogo/js/clipboard.min.js?1523556550"></script>
+    <script src="/tci-flogo/js/perfect-scrollbar.min.js?1523556550"></script>
+    <script src="/tci-flogo/js/perfect-scrollbar.jquery.min.js?1523556550"></script>
+    <script src="/tci-flogo/js/jquery.sticky-kit.min.js?1523556550"></script>
+    <script src="/tci-flogo/js/featherlight.min.js?1523556550"></script>
+    <script src="/tci-flogo/js/html5shiv-printshiv.min.js?1523556550"></script>
+    <script src="/tci-flogo/js/highlight.pack.js?1523556550"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/tci-flogo/js/modernizr.custom.71422.js?1523556550"></script>
+    <script src="/tci-flogo/js/learn.js?1523556550"></script>
+    <script src="/tci-flogo/js/hugo-learn.js?1523556550"></script>
+
+    <link href="/tci-flogo/mermaid/mermaid.css?1523556550" type="text/css" rel="stylesheet" />
+    <script src="/tci-flogo/mermaid/mermaid.js?1523556550"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    
+
+  </body>
+</html>
+

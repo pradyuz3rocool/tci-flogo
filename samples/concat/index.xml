@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Concat on TIBCO Cloud Integration - Flogo SDK</title>
+    <link>https://tibcosoftware.github.io/tci-flogo/samples/concat/</link>
+    <description>Recent content in Concat on TIBCO Cloud Integration - Flogo SDK</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 09 Apr 2016 16:50:16 +0200</lastBuildDate>
+    
+	<atom:link href="https://tibcosoftware.github.io/tci-flogo/samples/concat/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Simple concat</title>
+      <link>https://tibcosoftware.github.io/tci-flogo/samples/concat/simple-concat/</link>
+      <pubDate>Sat, 09 Apr 2016 16:50:16 +0200</pubDate>
+      
+      <guid>https://tibcosoftware.github.io/tci-flogo/samples/concat/simple-concat/</guid>
+      <description>Let&amp;rsquo;s create a simple concat activity. The activity takes two input strings and returns a single string which will be the concatenation of the input. To structure our extensions we&amp;rsquo;ll put them in the TIBCO category, but you&amp;rsquo;re free to choose your own 😄
+The folder The first step is to create a folder named concat in the TIBCO category with following files:
+TIBCO └───activity └───concat ├───activity.json |───activity.go |───activity_test.go └───concat.</description>
+    </item>
+    
+    <item>
+      <title>Adding a separator token</title>
+      <link>https://tibcosoftware.github.io/tci-flogo/samples/concat/separator-concat/</link>
+      <pubDate>Sat, 09 Apr 2016 16:50:16 +0200</pubDate>
+      
+      <guid>https://tibcosoftware.github.io/tci-flogo/samples/concat/separator-concat/</guid>
+      <description>Let&amp;rsquo;s enhance the concat activity to let users select a separator for concatenation.
+activity.json The activity.json file needs a few small changes and now has a third input for the separator, that also shows which separators are allowed.
+{ &amp;quot;name&amp;quot;: &amp;quot;concat&amp;quot;, &amp;quot;title&amp;quot;: &amp;quot;Concat Activity&amp;quot;, &amp;quot;author&amp;quot;: &amp;quot;TIBCO Software Inc.&amp;quot;, &amp;quot;version&amp;quot;: &amp;quot;1.0.0&amp;quot;, &amp;quot;type&amp;quot;: &amp;quot;flogo:activity&amp;quot;, &amp;quot;display&amp;quot;: { &amp;quot;category&amp;quot;: &amp;quot;TIBCO&amp;quot;, &amp;quot;visible&amp;quot;: true, &amp;quot;smallIcon&amp;quot;: &amp;quot;concat-small-icon.png&amp;quot;, &amp;quot;description&amp;quot;: &amp;quot;This activity returns concatenation of two strings&amp;quot; }, &amp;quot;ref&amp;quot;: &amp;quot;github.</description>
+    </item>
+    
+    <item>
+      <title>Adding more UI options</title>
+      <link>https://tibcosoftware.github.io/tci-flogo/samples/concat/ui-choices-concat/</link>
+      <pubDate>Sat, 09 Apr 2016 16:50:16 +0200</pubDate>
+      
+      <guid>https://tibcosoftware.github.io/tci-flogo/samples/concat/ui-choices-concat/</guid>
+      <description>Now the user can choose the separator token, but what to do if you want to let users decide whether they want to use a separator or not and what to do if you don&amp;rsquo;t want to hardcode the separator list in the JSON file? All of this can be solved with simple TypeScript (ts) code!
+The folder We need two TypeScript files for our Concat activity. In those files we&amp;rsquo;ll make the separator field visible only when users wants to use it and we&amp;rsquo;ll also construct and return separator list.</description>
+    </item>
+    
+  </channel>
+</rss>
